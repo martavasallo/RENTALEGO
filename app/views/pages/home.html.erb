@@ -1,3 +1,11 @@
 <h1>Pages#home</h1>
 <p>Find me in app/views/pages/home.html.erb</p>
 
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= list.photo.attached? ? cl_image_path(list.photo.key) : asset_path('home_banner.png');">
+  <div class="container">
+    <h1>RENTALEGO</h1>
+    <p>Give your Legos a second life!</p>
+    <a class="btn btn-flat" href="#">Listing Legos</a>
+    <a class="btn btn-flat" href="#">Legos Rented</a>
+  </div>
+</div>
