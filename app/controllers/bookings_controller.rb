@@ -1,9 +1,9 @@
 class BookingsController < ApplicationController
 
-def new
-  @booking = Booking.new
-  @lego = Lego.find(params[:lego_id])
-end
+  def new
+    @booking = Booking.new
+    @lego = Lego.find(params[:lego_id])
+  end
 
   def create
     @lego = Lego.find(params[:lego_id])
