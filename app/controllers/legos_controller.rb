@@ -1,8 +1,6 @@
 class LegosController < ApplicationController
-<<<<<<< HEAD
-=======
   before_action :set_lego, only: [:show, :edit, :update, :destroy]
->>>>>>> master
+
   def index
     @legos = Lego.all
   end
@@ -13,6 +11,7 @@ class LegosController < ApplicationController
 
   def create
     @lego = Lego.new(lego_params)
+    @lego.user = current_user
     if @lego.save
       redirect_to legos_path
     else
@@ -45,6 +44,6 @@ class LegosController < ApplicationController
   end
 
   def lego_params
-    params.require(:lego).permit(:title, :description, :price, :location, :user_id)
+    params.require(:lego).permit(:title, :description, :price, :location, :photo)
   end
 end

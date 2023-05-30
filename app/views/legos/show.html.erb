@@ -5,6 +5,9 @@
     <div class="col-8">
       <div class="lego-show-card">
         <h1><%= @lego.title %></h1>
+        <% if @lego.photo.attached? %>
+        <%= cl_image_tag @lego.photo.key, height: 300, width: 400, crop: :fill %>
+        <% end %>
         <p class="lego-show-address"><%= @lego.location %></p>
       </div>
       <div class="lego-show-card">
