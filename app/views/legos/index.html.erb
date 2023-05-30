@@ -3,5 +3,10 @@
 <P>Legos</P>
 
 <% @legos.each do |lego| %>
-  <%= lego.title %>
+  <div>
+   <h2><%= lego.title %></h2>
+    <p><%= lego.location %></p>
+    <p><%= lego.description %></p>
+    <h5><%= lego.price %></h5>
+  </div>
 <% end %>
