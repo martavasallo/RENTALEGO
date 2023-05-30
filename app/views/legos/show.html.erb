@@ -16,22 +16,22 @@
       </div>
     </div>
 
+
     <div class="col-4">
       <div class="lego-show-card">
         <h5>Book this Lego Master Piece!</h5>
-          <%= link_to "Book!", new_lego_booking_path(@lego) %>
 
-        <%# <form action="">
-          <div class="input-group">
-            <span class="input-group-text" id="start-date-label">From:</span>
-            <input type="text" class="form-control" placeholder="12/10/2017" aria-label="start-date" aria-describedby="start-date-label">
-          </div>
-          <div class="input-group mt-2">
-            <span class="input-group-text" id="end-date-label">To:</span>
-            <input type="text" class="form-control" placeholder="18/10/2017" aria-label="end-date" aria-describedby="start-date-label">
-          </div>
-          <input type="submit" value="Book" class="btn btn-success mt-2" style="width: 100%">
-        </form> %>
+          <%= simple_form_for [@lego, @booking] do |f| %>
+            <div class="input-group">
+              <%= f.input :start_date, label: "From:" %>
+            </div>
+            <div class="input-group mt-2">
+              <%= f.input :end_date, label: "To:"%>
+            </div>
+            <%= f.button :submit, class: "btn btn-success mt-2 w-100", value: "Book" %>
+          <% end %>
+
+
       </div>
       <div class="lego-show-card">
         <h3>Details</h3>
