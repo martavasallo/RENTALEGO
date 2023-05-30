@@ -36,12 +36,8 @@
       <div class="lego-show-card">
         <h3>Details</h3>
         <div class="flex">
-          <div class="flex ms-3">
-            <%= @lego.title %>€
-          </div>
-          <div class="flex ms-3">
-            <%= @lego.price %>€
-          </div>
+          <div class="flex ms-3"> <%= @lego.title %></div>
+          <div class="flex ms-3"> <%= @lego.price*rand(1...10) %>€ </div>
         </div>
       </div>
       <div class="lego-show-card">
