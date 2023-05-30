@@ -12,6 +12,9 @@
       <% else %>
         <p>All <%= Lego.count %> legoss.</p>
       <% end %>
+      <div class="btn btn primary">
+      <%= link_to "Create a new listing!", new_lego_path %>
+      </div>
     </div>
   </div>
 
