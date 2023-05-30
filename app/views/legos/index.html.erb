@@ -1,7 +1,51 @@
-<h1>HOME PAGE</h1>
+<div class="container mt-3">
+  <div class="row">
+    <div class="col-12">
+      <h1>All our legos</h1>
+    </div>
+  </div>
 
-<P>Legos</P>
+  <div class="row">
+    <div class="col">
+      <% if @query %>
+        <p>You searched for <strong><%= @query %></strong>. We found <%= @legos.count %> legos out of our <%= Lego.count %> on our website.</p>
+      <% else %>
+        <p>All <%= Lego.count %> legoss.</p>
+      <% end %>
+    </div>
+  </div>
 
-<% @legos.each do |lego| %>
-  <%= lego.title %>
-<% end %>
+  <div class="row">
+    <% @legos.each do |lego| %>
+      <div class="col-md-4">
+        <div class="lego-card">
+          <div class="lego-card-image" ></div>
+          <div class="lego-card-content">
+            <div class="lego-card-title">
+              <h4><%= lego.title %></h4>
+            </div>
+            <p><%= lego.location %></p>
+            <div class="flex">
+              <div class="flex align-items-center">
+                <i class="fa-solid fa-people-line"></i>
+                <span><%= lego.description %></span>
+              </div>
+              <div class="flex align-items-center ms-3">
+                <i class="fa-solid fa-euro-sign"></i>
+                <span><%= lego.price %></span>
+              </div>
+            </div>
+          </div>
+          <div class="lego-card-actions">
+            <%= link_to "More info", lego_path(lego) %>
+            <%= link_to "Edit", edit_lego_path(lego), class: "ms-3 text-warning" %>
+            <%= link_to "Remove", lego_path(lego),
+                data: { turbo_method: :delete, turbo_confirm: "Are you sure?" },
+                class: "ms-3 text-danger"
+            %>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
