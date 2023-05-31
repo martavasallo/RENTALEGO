@@ -24,7 +24,6 @@
                 <span><%= lego.description %></span>
               </div>
               <div class="flex align-items-center ms-3">
-                <i class="fa-solid fa-euro-sign"></i>
                 <span><%= lego.price %></span>
               </div>
             </div>
@@ -43,7 +42,7 @@
       <div class="col-md-4">
         <div class="lego-card">
             <% if booking.lego.photo.attached? %>
-              <%= cl_image_tag booking.lego.photo.key, height: 300, width: 400, crop: :fill %>
+              <%= cl_image_tag booking.lego.photo.key, height: 300, crop: :fill, class:"w-100"%>
             <% end %>
           <div class="lego-card-content">
             <div class="lego-card-title">
@@ -52,7 +51,6 @@
             <p><%= booking.lego.location %></p>
             <div class="flex">
               <div class="flex align-items-center">
-                <i class="fa-solid fa-people-line"></i>
                 <span><%= booking.lego.description %></span>
               </div>
               <div class="flex align-items-center ms-3">
