@@ -1,2 +1,13 @@
-<h1>Congrats! The <%= @booking.lego.title %> is booked for you, from <%= @booking.start_date %>to <%= @booking.end_date %></h1>
-<%= link_to "Back to home page", legos_path %>
+<div class="container mt-3">
+  <div class="row">
+    <div class="col">
+      <h1>Congrats!</h1>
+      <h4><%= @booking.lego.title %> is booked for you, from <%= @booking.start_date %>to <%= @booking.end_date %></h4>
+
+        <div class="btn btn primary">
+          <%= link_to "Back to home page", legos_path %>
+        </div>
+
+    </div>
+  </div>
+</div>
