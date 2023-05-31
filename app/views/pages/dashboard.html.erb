@@ -1,0 +1,43 @@
+<div class="container">
+  <div class= "user">
+    <p>Email: <%= current_user.email %></p>
+  </div>
+  <div class="my-legos row">
+    <h2>My legos:</h2>
+    <% current_user.legos.each do |lego| %>
+      <div class="col-md-4">
+        <div class="lego-card">
+          <div class="lego-card-image" ></div>
+            <% if lego.photo.attached? %>
+              <%= cl_image_tag lego.photo.key, height: 300, width: 400, crop: :fill %>
+            <% end %>
+          <div class="lego-card-content">
+            <div class="lego-card-title">
+              <h4><%= lego.title %></h4>
+            </div>
+            <p><%= lego.location %></p>
+            <div class="flex">
+              <div class="flex align-items-center">
+                <i class="fa-solid fa-people-line"></i>
+                <span><%= lego.description %></span>
+              </div>
+              <div class="flex align-items-center ms-3">
+                <i class="fa-solid fa-euro-sign"></i>
+                <span><%= lego.price %></span>
+              </div>
+            </div>
+          </div>
+          <div class="lego-card-actions">
+            <%= link_to "More info", lego_path(lego) %>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+  <div class="my-bookings row">
+    <h2>My bookings:</h2>
+    <%= current_user.bookings.each do |booking| %>
+    <%= booking. %>
+  </div>
+
+</div>

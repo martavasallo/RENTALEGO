@@ -39,6 +39,8 @@ class LegosController < ApplicationController
     redirect_to legos_path, status: :see_other
   end
 
+
+
   private
   def set_lego
     @lego = Lego.find(params[:id])
