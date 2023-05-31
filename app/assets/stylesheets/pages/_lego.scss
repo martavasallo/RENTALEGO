@@ -10,22 +10,18 @@
 }
 
 .lego-card {
-  width: 100%;
-  position: relative;
-  margin: .5rem 0 1rem 0;
   background-color: #fff;
-  border-radius: 2px;
+  border-radius: 15px;
   box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 1px 5px 0 rgba(0,0,0,0.12), 0 3px 1px -2px rgba(0,0,0,0.2);
+  grid-gap: 8px;
 }
 
 .lego-card-image {
-  height: 180px;
   background-position: center;
-  background-size: cover;
 }
 
 .lego-card-content {
-  padding: 24px;
+  padding: 10px;
   background-color: #F8F9FA;
 }
 
@@ -33,7 +29,7 @@
   position: relative;
   background-color: inherit;
   border-top: 1px solid rgba(160,160,160,0.2);
-  padding: 16px 24px;
+
 }
 
 .lego-form {
