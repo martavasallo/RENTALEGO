@@ -1,10 +1,9 @@
 <div class="container">
-  <div class= "user">
+ <div>
     <h2>My account</h2>
-    <p>Username: PierreRobertson06</p>
+    <p>Username: <%=current_user.email%></p>
     <p>Email: <%= current_user.email %></p>
     <p>Bio: Hello I am super passionate about legos and i want to share my passion with people. I trying other people's legos as well. Please make a request to rent my legos and maybe i will rent yours! Yay:$</p>
-
   </div>
   <div class="my-legos row">
     <h2>My legos:</h2>
@@ -20,11 +19,7 @@
             </div>
             <p><%= lego.location %></p>
             <div class="flex">
-              <div class="flex align-items-center">
-                <span><%= lego.description %></span>
-              </div>
               <div class="flex align-items-center ms-3">
-                <i class="fa-solid fa-euro-sign"></i>
                 <span><%= lego.price %></span>
               </div>
             </div>
@@ -43,7 +38,7 @@
       <div class="col-md-4">
         <div class="lego-card">
             <% if booking.lego.photo.attached? %>
-              <%= cl_image_tag booking.lego.photo.key, height: 300, width: 400, crop: :fill %>
+              <%= cl_image_tag booking.lego.photo.key, height: 300, crop: :fill, class:"w-100"%>
             <% end %>
           <div class="lego-card-content">
             <div class="lego-card-title">
@@ -51,10 +46,6 @@
             </div>
             <p><%= booking.lego.location %></p>
             <div class="flex">
-              <div class="flex align-items-center">
-                <i class="fa-solid fa-people-line"></i>
-                <span><%= booking.lego.description %></span>
-              </div>
               <div class="flex align-items-center ms-3">
                 <span><%= booking.lego.price %></span>
               </div>
@@ -72,6 +63,5 @@
       <% end %>
   </div>
 </div>
-
-<div style="height:66">
-</div>
+<div style="height: 10px">
+  </div>
