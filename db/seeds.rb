@@ -7,7 +7,7 @@
 #   Character.create(name: "Luke", movie: movies.first)
 require "open-uri"
 
-file_one = URI.open("https://unsplash.com/photos/B7N0IjiIJYo")
+file_one = URI.open("https://images.unsplash.com/photo-1563823251941-b9989d1e8d97?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjR8fGxlZ298ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=800&q=60")
 file_two= URI.open("https://images.unsplash.com/photo-1611604548018-d56bbd85d681?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8bGVnb3xlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=800&q=60")
 file_three = URI.open("https://images.unsplash.com/photo-1472457897821-70d3819a0e24?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8bGVnb3xlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=800&q=60")
 file_four = URI.open("https://images.unsplash.com/photo-1485550409059-9afb054cada4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fGxlZ298ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=800&q=60")
