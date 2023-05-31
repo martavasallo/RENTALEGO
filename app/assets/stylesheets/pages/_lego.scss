@@ -16,22 +16,27 @@
   grid-gap: 8px;
   img {
     object-fit: cover;
+    border-radius: 15px;
   }
 }
 
 .lego-card-image {
   background-position: center;
+  border-radius: 15px;
 }
 
 .lego-card-content {
   padding: 10px;
   background-color: #F8F9FA;
+  border-radius: 15px;
+
 }
 
 .lego-card-actions {
   position: relative;
   background-color: inherit;
   border-top: 1px solid rgba(160,160,160,0.2);
+  border-radius: 15px;
 
 }
 
@@ -39,7 +44,9 @@
   background-color: #F8F9FA;
   padding: 24px;
   border-radius: 3px;
+
 }
+
 
 .lego-show-card {
   background: #F8F9FA;
@@ -55,17 +62,14 @@
   background-size: cover;
 }
 
-.margin-top-negative {
-  margin-top: -75px;
-}
 .no-mb {
   margin-bottom: 0;
 }
 
 .lego-show-address {
   font-weight: 300;
-  font-size: 20px;
   color: #333;
+
 }
 
 
@@ -73,6 +77,7 @@
   font-size: 16px;
   font-weight: bold;
   margin: 0;
+
 }
 
 .card-product p {
@@ -81,4 +86,9 @@
   opacity: .7;
   margin-bottom: 0;
   margin-top: 8px;
+}
+
+.small-logo {
+  width: 100px;
+  height: 100px;
 }

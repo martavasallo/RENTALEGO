@@ -1,12 +1,11 @@
-<div class="map"></div>
-
 <div class="container margin-top-negative">
+<br><br><br><br>
   <div class="row">
     <div class="col-8">
-      <div class="lego-show-card">
+      <div class="lego-show-card lego-card">
         <h1><%= @lego.title %></h1>
         <% if @lego.photo.attached? %>
-        <%= cl_image_tag @lego.photo.key, height: 300, width: 400, crop: :fill %>
+        <%= cl_image_tag @lego.photo.key, height: 300, crop: :fill, class:"w-100" %>
         <% end %>
         <p class="lego-show-address"><%= @lego.location %></p>
       </div>
@@ -52,3 +51,5 @@
     </div>
   </div>
 </div>
+<div style="height: 10px">
+  </div>

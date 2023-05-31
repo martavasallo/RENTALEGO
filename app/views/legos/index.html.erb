@@ -7,14 +7,9 @@
 
   <div class="row">
     <div class="col">
-      <% if @query %>
-        <p>You searched for <strong><%= @query %></strong>. We found <%= @legos.count %> legos out of our <%= Lego.count %> on our website.</p>
-      <% else %>
-        <p>All <%= Lego.count %> legos.</p>
-      <% end %>
-      <div class="btn btn primary">
-      <%= link_to "Create a new listing!", new_lego_path %>
-      </div>
+      <% if @query %> <p>You searched for <strong><%= @query %></strong>. We found <%= @legos.count %> legos out of our <%= Lego.count %> on our website.</p> <% else %>
+        <p>All <%= Lego.count %> legos.</p> <% end %>
+      <div class="btn btn primary"><%= link_to "Create a new listing!", new_lego_path %></div>
     </div>
   </div>
 
@@ -22,27 +17,29 @@
     <% @legos.each do |lego| %>
       <div class="col-md-4">
         <div class="lego-card">
-            <% if lego.photo.attached? %>
-              <%= cl_image_tag lego.photo.key, height: 300, crop: :fill, class:"w-100"%>
-            <% end %>
-          <div class="lego-card-content">
-            <div class="lego-card-title">
-              <h4><%= lego.title %></h4>
-            </div>
-            <p><%= lego.location %></p>
-            <div class="flex">
-              <div class="flex align-items-center">
-                <span><%= lego.description %></span>
-              </div>
-              <div class="flex align-items-center ms-3">
-                <i class="fa-solid fa-euro-sign"></i>
-                <span><%= lego.price %></span>
-              </div>
-            </div>
-          </div>
-          <div class="lego-card-actions">
-            <%= link_to "More info", lego_path(lego) %>
 
+            <% if lego.photo.attached? %> <%= cl_image_tag lego.photo.key, height: 300, crop: :fill, class:"w-100"%><% end %>
+
+          <div class="lego-card-content">
+            <div class="lego-card-title"> <h4><%= lego.title %></h4></div>
+            <p><%= lego.location %></p>
+
+
+              <div class="flex align-items-center"><span><%= lego.description %></span> </div>
+            </div>
+
+          <div class="flex justify-content-around">
+            <div class="lego-card-actions"> <%= link_to "More info", lego_path(lego) %></div>
+            <div class="flex align-items-center ms-3"><i class="fa-solid fa-euro-sign"></i> <span><%= lego.price %></span></div>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
+
+<div style="height: 10px">
+  </div>
             <%# <%= link_to "Edit", edit_lego_path(lego), class: "ms-3 text-warning" %>
             <%# <%= link_to "Remove", lego_path(lego), %>
                 <%# data: { turbo_method: :delete, turbo_confirm: "Are you sure?" },
@@ -53,9 +50,3 @@
                 data: { turbo_method: :delete, turbo_confirm: "Are you sure?" },
                 class: "ms-3 text-danger"
             %>
-          </div>
-        </div>
-      </div>
-    <% end %>
-  </div>
-</div>
