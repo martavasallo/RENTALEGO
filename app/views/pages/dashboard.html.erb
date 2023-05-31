@@ -1,6 +1,10 @@
 <div class="container">
   <div class= "user">
+    <h2>My account</h2>
+    <p>Username: PierreRobertson06</p>
     <p>Email: <%= current_user.email %></p>
+    <p>Bio: Hello I am super passionate about legos and i want to share my passion with people. I trying other people's legos as well. Please make a request to rent my legos and maybe i will rent yours! Yay:$</p>
+
   </div>
   <div class="my-legos row">
     <h2>My legos:</h2>
@@ -34,10 +38,42 @@
       </div>
     <% end %>
   </div>
+
   <div class="my-bookings row">
     <h2>My bookings:</h2>
-    <%= current_user.bookings.each do |booking| %>
-    <%= booking. %>
+      <% current_user.bookings.each do |booking| %>
+      <div class="col-md-4">
+        <div class="lego-card">
+          <div class="booking-dates">
+          <p>From the <%= booking.start_date %></p>
+          <p>Until the <%= booking.end_date %></p>
+          </div>
+          <div class="lego-card-image" ></div>
+            <% if booking.lego.photo.attached? %>
+              <%= cl_image_tag booking.lego.photo.key, height: 300, width: 400, crop: :fill %>
+            <% end %>
+          <div class="lego-card-content">
+            <div class="lego-card-title">
+              <h4><%= booking.lego.title %></h4>
+            </div>
+            <p><%= booking.lego.location %></p>
+            <div class="flex">
+              <div class="flex align-items-center">
+                <i class="fa-solid fa-people-line"></i>
+                <span><%= booking.lego.description %></span>
+              </div>
+              <div class="flex align-items-center ms-3">
+                <i class="fa-solid fa-euro-sign"></i>
+                <span><%= booking.lego.price %></span>
+              </div>
+            </div>
+          </div>
+          <div class="lego-card-actions">
+            <%= link_to "More info", booking_path(booking) %>
+          </div>
+        </div>
+      </div>
+      <% end %>
   </div>
 
 </div>
