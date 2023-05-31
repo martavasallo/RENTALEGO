@@ -11,9 +11,8 @@
     <% current_user.legos.each do |lego| %>
       <div class="col-md-4">
         <div class="lego-card">
-          <div class="lego-card-image" ></div>
             <% if lego.photo.attached? %>
-              <%= cl_image_tag lego.photo.key, height: 300, width: 400, crop: :fill %>
+              <%= cl_image_tag lego.photo.key, height: 300, crop: :fill, class:"w-100"%>
             <% end %>
           <div class="lego-card-content">
             <div class="lego-card-title">
@@ -22,7 +21,6 @@
             <p><%= lego.location %></p>
             <div class="flex">
               <div class="flex align-items-center">
-                <i class="fa-solid fa-people-line"></i>
                 <span><%= lego.description %></span>
               </div>
               <div class="flex align-items-center ms-3">
@@ -44,11 +42,6 @@
       <% current_user.bookings.each do |booking| %>
       <div class="col-md-4">
         <div class="lego-card">
-          <div class="booking-dates">
-          <p>From the <%= booking.start_date %></p>
-          <p>Until the <%= booking.end_date %></p>
-          </div>
-          <div class="lego-card-image" ></div>
             <% if booking.lego.photo.attached? %>
               <%= cl_image_tag booking.lego.photo.key, height: 300, width: 400, crop: :fill %>
             <% end %>
@@ -63,10 +56,13 @@
                 <span><%= booking.lego.description %></span>
               </div>
               <div class="flex align-items-center ms-3">
-                <i class="fa-solid fa-euro-sign"></i>
                 <span><%= booking.lego.price %></span>
               </div>
             </div>
+          <div class="booking-dates">
+          <p>From the <%= booking.start_date %></p>
+          <p>Until the <%= booking.end_date %></p>
+          </div>
           </div>
           <div class="lego-card-actions">
             <%= link_to "More info", booking_path(booking) %>
@@ -75,5 +71,7 @@
       </div>
       <% end %>
   </div>
+</div>
 
+<div style="height:66">
 </div>
