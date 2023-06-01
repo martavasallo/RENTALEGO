@@ -1,6 +1,7 @@
 .navbar-lewagon {
   justify-content: space-between;
-  background: white;
+  background: #FFD905 !important;
+
 }
 
 .navbar-lewagon .navbar-collapse {
@@ -10,3 +11,22 @@
 .navbar-lewagon .navbar-brand img {
   width: 40px;
 }
+
+.btn-navbar {
+  color: white;
+  font-family: 'Press Start 2P', cursive;
+  text-decoration: none;
+  margin-right: 25px;
+
+  &:hover {
+    color: #d02020;
+  }
+}
+
+// .nav-background {
+//   background-image: url("<img src="https://i.pinimg.com/originals/f6/12/80/f612807220b664f9f5884ee9f72e64bd.jpg" jsaction="VQAsE" class="r48jcc pT0Scc iPVvYb" style="max-width: 720px; height: 476px; margin: 0px; width: 268px;" alt="75,811,106 Patterns Images, Stock Photos &amp; Vectors | Shutterstock | Lego  wallpaper, Galaxy s3 wallpaper, Rainbow colors" jsname="kn3ccd" aria-hidden="false">");
+//   background-size: cover;
+
+//   /* Workaround for some mobile browsers */
+//   min-height: 100%;
+// }
