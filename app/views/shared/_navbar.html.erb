@@ -8,11 +8,14 @@
                 <ul class="navbar-nav me-auto">
                   <% if user_signed_in? %>
                     <li>
-                      <%= link_to "Main list", legos_path, class:"btn btn-info me-2" %>
-                        </li >
-                          <li>
-                          <%= link_to "My account", dashboard_path, class:"btn btn-info me-2" %>
-                          </li>
+                      <%= link_to "Main list", legos_path, class:"main-btn btn btn-outline-success me-2" %>
+                    </li >
+                    <li>
+                      <%= link_to "My account", dashboard_path, class:"main-btn btn btn-outline-success me-2" %>
+                    </li>
+                    <li>
+                      <%= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete}, class: "main-btn btn btn-outline-success me-2" %>
+                    </li>
                           <%# <li class="nav-item dropdown">  %>
                     <%# <a href="#" class="avatar" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> %>
                       <%# image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar", alt: "dropdown menu" %>
