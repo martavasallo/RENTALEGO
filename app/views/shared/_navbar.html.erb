@@ -1,17 +1,17 @@
 <div class="navbar fixed-top sticky-top bg-white navbar-visitor navbar-light navbar-expand-lg py-lg-0">
       <div class="container justify-content-between ">
                   <%= link_to root_path do %>
-                    <%= image_tag "logo.png", class: "small-logo"%>
+                    <%= image_tag "logo.png", class: "small-logo" %>
                   <% end %>
             </div>
               <div>
                 <ul class="navbar-nav me-auto">
                   <% if user_signed_in? %>
                     <li>
-                      <%= link_to "Main list", legos_path, class:"btn btn-outline-success me-2" %>
+                      <%= link_to "Main list", legos_path, class:"btn btn-info me-2" %>
                         </li >
                           <li>
-                          <%= link_to "My account", dashboard_path, class:"btn btn-outline-success me-2" %>
+                          <%= link_to "My account", dashboard_path, class:"btn btn-info me-2" %>
                           </li>
                           <%# <li class="nav-item dropdown">  %>
                     <%# <a href="#" class="avatar" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> %>
