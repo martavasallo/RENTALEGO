@@ -26,8 +26,8 @@ Lego.destroy_all
 User.destroy_all
 
 puts "Creating users..."
-user1 = User.create!(email: "jonah@gmail.com", password: "secret")
-user2 = User.create!(email: "marta@gmail.com", password: "secret")
+user1 = User.create!(username: "JonahTheLegoMan", bio: "I grew up playing with legos and there is nothing i love more in the world! I want to share this passino with the world and see what other people have that they can share with me:)", email: "jonah@gmail.com", password: "secret")
+user2 = User.create!(username: "MartaTheLegoGOAT", bio: "I am the best lego collector in the world and i just want to be here to first of all show it off to the world and see if there is anything i can add to my collection", email: "marta@gmail.com", password: "secret")
 
 puts "Creating legos..."
 lego_one = Lego.new(title: "Identity & Landscape Kit", description: "The LEGO® SERIOUS PLAY® Identity and Landscape Kit is designed for use in conjunction with the
