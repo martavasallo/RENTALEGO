@@ -21,6 +21,7 @@ class LegosController < ApplicationController
 
   def show
     @booking = Booking.new
+    @review = Review.new
   end
 
   def edit

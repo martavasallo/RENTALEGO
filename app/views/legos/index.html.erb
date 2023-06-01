@@ -17,21 +17,18 @@
     <% @legos.each do |lego| %>
       <div class="col-md-4">
         <div class="lego-card">
-
-            <% if lego.photo.attached? %> <%= cl_image_tag lego.photo.key, height: 300, crop: :fill, class:"w-100"%><% end %>
-
+        
+          <% if lego.photo.attached? %> <%= cl_image_tag lego.photo.key, height: 300, crop: :fill, class:"w-100"%><% end %>
           <div class="lego-card-content">
             <div class="lego-card-title"> <h4><%= lego.title %></h4></div>
             <p><%= lego.location %></p>
-
-
-              <div class="flex align-items-center"><span><%= lego.description %></span> </div>
-            </div>
-
+            <div class="flex align-items-center"><span><%= lego.description %></span> </div>
+          </div>
           <div class="flex justify-content-around">
             <div class="lego-card-actions"> <%= link_to "More info", lego_path(lego) %></div>
             <div class="flex align-items-center ms-3"><i class="fa-solid fa-euro-sign"></i> <span><%= lego.price %></span></div>
           </div>
+
         </div>
       </div>
     <% end %>
