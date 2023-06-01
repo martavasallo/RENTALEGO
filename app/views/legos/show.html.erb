@@ -1,3 +1,4 @@
+
 <div class="container mt-3">
   <div class="row">
     <div class="col-8">
@@ -6,6 +7,7 @@
           <h1><%= @lego.title %></h1> <% if @lego.photo.attached? %> <%= cl_image_tag @lego.photo.key, height: 300, crop: :fill, class:"w-100" %> <% end %>
           <p class="lego-show-address"><%= @lego.location %></p>
         </div>
+
 
         <div class="lego-show-card">
           <h3>A bit more about this lego...</h3>
@@ -32,9 +34,10 @@
               <p><%= review.content %></p>
             </li>
           <% end %>
+
         </div>
       </div>
-    </div>
+
 
     <div class="col-4">
       <div class="lego-show-card">
@@ -48,25 +51,32 @@
 
       <div class="lego-show-card">
         <h3>Details</h3>
+
           <div class="flex">
             <div class="flex ms-3"> <%= @lego.title %></div>
             <div class="flex ms-3"> <%= @lego.price*rand(1...10) %>€ </div>
           </div>
+
       </div>
 
       <div class="lego-show-card">
         <div class="flex-align">
           <h6 class="no-mb">Share</h6>
+
             <div class="flex">
               <i class="fa-brands fa-facebook-square me-2"></i>
               <i class="fa-brands fa-twitter-square me-2"></i>
               <i class="fa-brands fa-pinterest-square me-2"></i>
             </div>
+
         </div>
       </div>
     </div>
 
   </div>
+  <div style="height: 10px">
 </div>
+
 <%# <div style="height: 10px">
 </div> %>
+
