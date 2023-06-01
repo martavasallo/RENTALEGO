@@ -2,7 +2,11 @@ class LegosController < ApplicationController
   before_action :set_lego, only: [:show, :edit, :update, :destroy]
 
   def index
-    @legos = Lego.all
+    if params[:query].nil? || params[:query] == ''
+      @legos = Lego.all
+    else
+      @legos = Lego.search_by_title_and_description_and_price_and_location(params[:query])
+    end
   end
 
   def new
@@ -21,6 +25,12 @@ class LegosController < ApplicationController
 
   def show
     @booking = Booking.new
+    @legos = Lego.all
+
+    @markers = [{
+        lat: @lego.latitude,
+        lng: @lego.longitude
+      }]
   end
 
   def edit
