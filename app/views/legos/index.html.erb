@@ -9,7 +9,6 @@
     <div class="col">
       <% if @query %> <p>You searched for <strong><%= @query %></strong>. We found <%= @legos.count %> legos out of our <%= Lego.count %> on our website.</p> <% else %>
         <p>All <%= Lego.count %> legos.</p> <% end %>
-      <div class="btn btn primary"><%= link_to "Create a new listing!", new_lego_path %></div>
     </div>
   </div>
 
@@ -25,13 +24,15 @@
             <p><%= lego.location %></p>
 
 
-              <div class="flex align-items-center"><span><%= lego.description %></span> </div>
+              <div class="flex align-items-center"><span><%= lego.description.truncate(40) %></span> </div>
             </div>
 
           <div class="flex justify-content-around">
-            <div class="lego-card-actions"> <%= link_to "More info", lego_path(lego) %></div>
+            <h3> <%=%></h3>
             <div class="flex align-items-center ms-3"><i class="fa-solid fa-euro-sign"></i> <span><%= lego.price %></span></div>
           </div>
+          <%= link_to '', lego_path(lego), class: 'card-link'  %>
+
         </div>
       </div>
     <% end %>

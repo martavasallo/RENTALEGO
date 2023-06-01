@@ -1,15 +1,17 @@
 <div class="container">
  <div>
-    <h2>My account</h2>
-    <p>Username: <%=current_user.email%></p>
+    <h2><%=current_user.username%>'s account</h2>
+    <p>About me: <%= current_user.bio %></p>
     <p>Email: <%= current_user.email %></p>
-    <p>Bio: Hello I am super passionate about legos and i want to share my passion with people. I trying other people's legos as well. Please make a request to rent my legos and maybe i will rent yours! Yay:$</p>
   </div>
   <div class="my-legos row">
     <h2>My legos:</h2>
+    <div class="col">
+      <div class="main-btn btn btn primary"><%= link_to "Create a new listing!", new_lego_path %></div>
+    </div>
     <% current_user.legos.each do |lego| %>
       <div class="col-md-4">
-        <div class="lego-card">
+        <div class="lego-card"><%= link_to ".lego-card", lego_path(lego) %>
             <% if lego.photo.attached? %>
               <%= cl_image_tag lego.photo.key, height: 300, crop: :fill, class:"w-100"%>
             <% end %>
