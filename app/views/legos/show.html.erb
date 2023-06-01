@@ -1,65 +1,82 @@
-<div class="container margin-top-negative">
-  <br><br><br><br>
-    <div class="row">
-      <div class="col-8">
-        <div class="lego-show-card lego-card">
-          <h1><%= @lego.title %></h1>
-          <% if @lego.photo.attached? %>
-          <%= cl_image_tag @lego.photo.key, height: 300, crop: :fill, class:"w-100" %>
-          <% end %>
+
+<div class="container mt-3">
+  <div class="row">
+    <div class="col-8">
+      <div class="lego-show-card lego-card">
+        <div class="list-group">
+          <h1><%= @lego.title %></h1> <% if @lego.photo.attached? %> <%= cl_image_tag @lego.photo.key, height: 300, crop: :fill, class:"w-100" %> <% end %>
           <p class="lego-show-address"><%= @lego.location %></p>
         </div>
+
+
         <div class="lego-show-card">
           <h3>A bit more about this lego...</h3>
           <p><%= @lego.description %></p>
         </div>
 
-        <div class="lego-show-card lego-card">
-          <div style="width: 100%; height: 600px;"
-            data-controller="map"
-            data-map-markers-value="<%= @markers.to_json %>"
-            data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
-          </div>
+        <div>
+          <%= simple_form_for [@lego, @review] do |f| %>
+           <div class="flex align-items-center ms-3">
+           <span> <%= f.input :rating, collection: 0..5 %> </span>
+            <span> <%= f.input :content%></span>
+             <span><%= f.submit class: 'btn btn-primary' %></span>
+            </div>
+          <% end %>
+        </div>
+        <div>
+          <% @lego.reviews.each do |review| %>
+            <li class="list-group-item">
+              <small> <% count = 0 %> <% 5.times do %> <% if review.rating > count %> <i class="fa-solid fa-star"></i>
+                <% else %>
+                <i class="fa-regular fa-star"></i>
+                <% end %> <% count += 1 %> <% end %>
+              </small>
+              <p><%= review.content %></p>
+            </li>
+          <% end %>
 
         </div>
       </div>
 
 
-      <div class="col-4">
-        <div class="lego-show-card">
-          <h5>Book this Lego Master Piece!</h5>
+    <div class="col-4">
+      <div class="lego-show-card">
+        <h5>Book this Lego Master Piece!</h5>
+        <%= simple_form_for [@lego, @booking] do |f| %>
+          <div class="input-group"> <%= f.input :start_date, label: "From:" %></div>
+          <div class="input-group mt-2"> <%= f.input :end_date, label: "To:"%> </div>
+          <%= f.button :submit, class: "btn btn-success mt-2 w-100", value: "Book" %>
+        <% end %>
+      </div>
 
-            <%= simple_form_for [@lego, @booking] do |f| %>
-              <div class="input-group">
-                <%= f.input :start_date, label: "From:" %>
-              </div>
-              <div class="input-group mt-2">
-                <%= f.input :end_date, label: "To:"%>
-              </div>
-              <%= f.button :submit, class: "btn btn-success mt-2 w-100", value: "Book" %>
-            <% end %>
-        </div>
+      <div class="lego-show-card">
+        <h3>Details</h3>
 
-        <div class="lego-show-card">
-          <h3>Details</h3>
           <div class="flex">
             <div class="flex ms-3"> <%= @lego.title %></div>
             <div class="flex ms-3"> <%= @lego.price*rand(1...10) %>€ </div>
           </div>
-        </div>
-        <div class="lego-show-card">
-          <div class="flex-align">
-            <h6 class="no-mb">Share</h6>
+
+      </div>
+
+      <div class="lego-show-card">
+        <div class="flex-align">
+          <h6 class="no-mb">Share</h6>
 
             <div class="flex">
               <i class="fa-brands fa-facebook-square me-2"></i>
               <i class="fa-brands fa-twitter-square me-2"></i>
               <i class="fa-brands fa-pinterest-square me-2"></i>
             </div>
-          </div>
+
         </div>
       </div>
     </div>
+
   </div>
   <div style="height: 10px">
 </div>
+
+<%# <div style="height: 10px">
+</div> %>
+

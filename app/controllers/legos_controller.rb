@@ -25,12 +25,16 @@ class LegosController < ApplicationController
 
   def show
     @booking = Booking.new
+
+    @review = Review.new
+
     @legos = Lego.all
 
     @markers = [{
         lat: @lego.latitude,
         lng: @lego.longitude
       }]
+
   end
 
   def edit
