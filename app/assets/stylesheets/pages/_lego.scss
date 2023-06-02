@@ -1,12 +1,120 @@
+.lego-card-price {
+  display: flex;
+  align-items: center;
+  font-size: 18px;
+  color: #333;
+}
 
+.lego-card-price i {
+  margin-right: 5px;
+  font-size: 14px;
+}
 
+.lego-card-price span {
+  font-weight: bold;
+}
+.lego-card-content {
+  background-color: #f8f9fa;
+  padding: 20px;
+  border-radius: 5px;
+}
+
+.card-title {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.card-location {
+  color: #777;
+  margin-bottom: 10px;
+}
+
+.card-description {
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.lego-card-footer {
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.lego-card-avatar img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.lego-card-details {
+  display: flex;
+  align-items: center;
+}
+
+.lego-card-actions {
+  margin-right: 10px;
+}
+
+.btn-primary {
+  background-color: #E41E26;;
+  color: white;
+  border-color:white;
+}
 .flex {
   display: flex;
 }
-.flex-align {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+
+.lego-heading {
+  font-family: 'Press Start 2P', cursive;
+  color: #E41E26; /* Red color */
+  font-size: 36px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 40px;
+}
+
+.lego-heading2 {
+  font-family: 'Press Start 2P', cursive;
+  color: #E41E26; /* Red color */
+  font-size: 18px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  text-align: center;
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+.lego-heading3 {
+  font-family: 'Press Start 2P', cursive;
+  color: #E41E26; /* Red color */
+  font-size: 25px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+.lego-heading4 {
+  font-family: 'Press Start 2P', cursive;
+  color: #E41E26; /* Red color */
+  font-size: 18px;
+  letter-spacing: 2px;
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+.lego-search-submit {
+  background-color: #E41E26;
+  color: #FFFFFF;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-family: "LEGO", Arial, sans-serif;
+  font-size: 16px;
 }
 
 .lego-card {
@@ -14,11 +122,16 @@
   background-color: #fff;
   border-radius: 15px;
   box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 1px 5px 0 rgba(0,0,0,0.12), 0 3px 1px -2px rgba(0,0,0,0.2);
-  grid-gap: 8px;
   img {
     object-fit: cover;
     border-radius: 15px;
   }
+}
+
+.counter-text {
+  color: #FDD835; /* Yellow color of Lego */
+  font-size: 18px;
+  font-weight: bold;
 }
 
 .lego-card-image {
@@ -26,19 +139,14 @@
   border-radius: 15px;
 }
 
-.lego-card-content {
-  padding: 10px;
-  background-color: #F8F9FA;
-  border-radius: 15px;
 
-}
 
-.lego-card-actions {
-  position: relative;
-  background-color: inherit;
-  border-top: 1px solid rgba(160,160,160,0.2);
-  border-radius: 15px;
-
+.lego-show-card {
+  background: #F8F9FA;
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+  border-radius: 3px;
 }
 
 .lego-form {
@@ -49,12 +157,26 @@
 }
 
 
-.lego-show-card {
-  background: #F8F9FA;
-  padding: 20px;
-  margin-bottom: 20px;
-  box-shadow: 1px 1px 2px rgba(0,0,0,0.1);
-  border-radius: 3px;
+.lego-card-actions {
+  position: relative;
+  background-color: inherit;
+  border-top: 1px solid rgba(160,160,160,0.2);
+  border-radius: 15px;
+
+}
+.card-product h2 {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0;
+
+}
+
+.card-product p {
+  font-size: 12px;
+  line-height: 1.4;
+  opacity: .7;
+  margin-bottom: 0;
+  margin-top: 8px;
 }
 
 .map {
@@ -72,21 +194,3 @@
   color: #333;
 
 }
-
-
-.card-product h2 {
-  font-size: 16px;
-  font-weight: bold;
-  margin: 0;
-
-}
-
-.card-product p {
-  font-size: 12px;
-  line-height: 1.4;
-  opacity: .7;
-  margin-bottom: 0;
-  margin-top: 8px;
-}
-
-
