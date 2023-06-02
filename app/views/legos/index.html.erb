@@ -48,11 +48,15 @@
                   </div>
               </div>
             <div class="lego-card-footer justify-content-around">
+
             <div class="lego-card-details">
               <div> <% if lego.user.photo.attached? %> <%= cl_image_tag lego.user.photo.key, class:"avatar"%> <% end %> </div>
               <div class="lego-card-price"> <i class="fa-solid fa-euro-sign"></i> <span><%= lego.price %></span></div>
+
               </div>
             </div>
+           <%= link_to '', lego_path(lego), class: 'card-link'  %>
+
         </div>
       </div>
     <% end %>
