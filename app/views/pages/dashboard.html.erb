@@ -2,8 +2,8 @@
 
   <div>
     <h2 class="lego-heading"><%=current_user.username%>'s account</h2>
-       <div class="avatar-pic">
-         <% if current_user.photo.attached? %> <%= cl_image_tag current_user.photo.key, height: 300, crop: :fill, class:"w-100"%><% end %>
+       <div class="avatar-pic2">
+         <% if current_user.photo.attached? %> <%= cl_image_tag current_user.photo.key%><% end %>
        </div>
     <p class="lego-heading2">About me: <%= current_user.bio %></p>
     <p class="lego-heading2">Email: <%= current_user.email %></p>

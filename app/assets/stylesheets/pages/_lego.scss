@@ -35,14 +35,12 @@
 }
 
 .lego-card-footer {
-  display: flex;
   align-items: center;
   margin-top: 10px;
 }
 
 .lego-card-avatar img {
   width: 40px;
-  height: 40px;
   border-radius: 50%;
   object-fit: cover;
 }
@@ -50,6 +48,8 @@
 .lego-card-details {
   display: flex;
   align-items: center;
+  justify-content: space-between;
+  padding: 5px 10px;
 }
 
 .lego-card-actions {
