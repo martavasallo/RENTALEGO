@@ -34,8 +34,6 @@ file_twenty_four = URI.open("https://images.unsplash.com/photo-1632080167294-6b1
 file_twenty_five = URI.open("https://images.unsplash.com/photo-1538448174498-9956c159edb0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MzR8fGxlZ298ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=1400&q=60")
 file_twenty_six= URI.open("https://images.unsplash.com/photo-1609741199743-341cf4ee3d02?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1527&q=80")
 file_twenty_seven = URI.open("https://images.unsplash.com/photo-1563823263008-ec7877629ba0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mzd8fGxlZ298ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=1400&q=60")
-file_twenty_eight = URI.open("https://images.unsplash.com/photo-1567329776387-a135c5ea2f75?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8bGVnbyUyMGNhcnxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=700&q=60")
-file_twenty_nine = URI.open("https://images.unsplash.com/photo-1600784574965-a2f558622fd9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=654&q=80")
 
 file_profile_one = URI.open("https://avatars.githubusercontent.com/u/130742075?v=4")
 file_profile_two = URI.open("https://avatars.githubusercontent.com/u/127049580?v=4")
@@ -58,10 +56,10 @@ user1.save
 user2 = User.new(username: "MartaTheLegoGOAT", bio: "I am the best lego collector in the world and i just want to be here to first of all show it off to the world and see if there is anything i can add to my collection", email: "marta@gmail.com", password: "secret")
 user2.photo.attach(io: file_profile_two, filename: "avatar.pic", content_type: "image/png")
 user2.save
-user3 = User.new(username: "BricksNostalgia", bio: "Greetings, fellow Lego enthusiasts! I go by the name MiniBrickMaster, and my love for Legos knows no bounds. As an adult collector, I find immense joy in the intricate details and clever design of Lego sets. For me, collecting Legos is a way to unwind and relive the carefree days of my childhood. I am fascinated by the versatility of Legos, allowing me to build anything my imagination conjures up. ", email: "brickhunter86@example.com" , password:"secret")
+user3 = User.new(username: "BricksNostalgia", bio: "Greetings, fellow Lego enthusiasts! I go by the name MiniBrickMaster, and my love for Legos knows no bounds. As an adult collector, I find immense joy in the intricate details and clever design of Lego sets. For me, collecting Legos is a way to unwind and relive the carefree days of my childhood. ", email: "brickhunter86@example.com" , password:"secret")
 user3.photo.attach(io: file_profile_three, filename: "avatar.pic", content_type: "image/png")
 user3.save
-user4 = User.new(username: "MiniBrickMaster", bio: "Hey there, fellow Lego enthusiasts! I'm BrickHunter86, and I've been collecting Legos for over a decade now. What started as a childhood hobby turned into a lifelong passion. The reason I collect Legos is simple: they ignite my imagination and transport me to a world of endless possibilities. Whether it's building intricate cityscapes, re-creating famous movie scenes, or constructing massive space stations, Legos allow me to express my creativity and bring my ideas to life brick by brick.", email: "minibrickmaster@example.com", password:"secret")
+user4 = User.new(username: "MiniBrickMaster", bio: "Hey there, fellow Lego enthusiasts! I'm BrickHunter86, and I've been collecting Legos for over a decade now. What started as a childhood hobby turned into a lifelong passion. The reason I collect Legos is simple: they ignite my imagination and transport me to a world of endless possibilities. ", email: "minibrickmaster@example.com", password:"secret")
 user4.photo.attach(io: file_profile_four, filename: "avatar.pic", content_type: "image/png")
 user4.save
 user5 = User.new(username: "BrickHunter86", bio: "Hello, fellow Lego lovers! I'm BricksNostalgia, and I'm a proud collector of Legos. For me, collecting these iconic building blocks is all about revisiting cherished memories from my childhood. As I handle each brick, I'm transported back to a time when the world seemed full of wonder and endless possibilities.", email:"bricksnostalgia@example.com", password:"secret")
@@ -70,23 +68,23 @@ user5.save
 
 
 puts "Creating legos..."
-lego_one = Lego.new(title: "Batman Lego Set", description: "This is the best Batman set you've ever seen! Rent it out for a few days, and your life will change!", price: 614.99, location: "28-30 Rivington St, London EC2A 3DZ", user: user1)
+lego_one = Lego.new(title: "Batman Lego Set", description: "This is the best Batman set you've ever seen! Rent it out for a few days, and your life will change!", price: 614.99, location: "Buckingham Palace, Westminster, London SW1A 1AA, United Kingdom", user: user1)
 lego_one.photo.attach(io: file_one, filename: "lego.png", content_type: "image/png")
 lego_one.save
 
-lego_two = Lego.new(title: "Star Wars Millennium Falcon", description: "Embark on an epic galactic adventure with this iconic Millennium Falcon set from Star Wars!", price: 299.99, location: "1234 Galaxy Lane, Coruscant", user: user2)
+lego_two = Lego.new(title: "Star Wars Millennium Falcon", description: "Embark on an epic galactic adventure with this iconic Millennium Falcon set from Star Wars!", price: 299.99, location: "The Shard, 32 London Bridge Street, London SE1 9SG, United Kingdom", user: user2)
 lego_two.photo.attach(io: file_two, filename: "lego.png", content_type: "image/png")
 lego_two.save
 
-lego_three = Lego.new(title: "Harry Potter Hogwarts Castle", description: "Experience the magic of Hogwarts with this enchanting castle set from the world of Harry Potter!", price: 399.99, location: "4 Privet Drive, Little Whinging", user: user3)
+lego_three = Lego.new(title: "Harry Potter Hogwarts Castle", description: "Experience the magic of Hogwarts with this enchanting castle set from the world of Harry Potter!", price: 399.99, location: "10 Downing Street, Westminster, London SW1A 2AA, United Kingdom", user: user3)
 lego_three.photo.attach(io: file_three, filename: "lego.png", content_type: "image/png")
 lego_three.save
 
-lego_four = Lego.new(title: "Marvel Avengers Helicarrier", description: "Assemble the Avengers and defend the world with this incredible Helicarrier set!", price: 499.99, location: "123 Avengers Tower, New York", user: user4)
+lego_four = Lego.new(title: "Marvel Avengers Helicarrier", description: "Assemble the Avengers and defend the world with this incredible Helicarrier set!", price: 499.99, location: "Tower Bridge, Tower Bridge Road, London SE1 2UP, United Kingdom", user: user4)
 lego_four.photo.attach(io: file_four, filename: "lego.png", content_type: "image/png")
 lego_four.save
 
-lego_five = Lego.new(title: "Jurassic Park T-Rex Rampage", description: "Get ready for prehistoric adventures with the massive T-Rex Rampage set inspired by Jurassic Park!", price: 199.99, location: "Isla Nublar, Costa Rica", user: user5)
+lego_five = Lego.new(title: "Jurassic Park T-Rex Rampage", description: "Get ready for prehistoric adventures with the massive T-Rex Rampage set inspired by Jurassic Park!", price: 199.99, location: "Buckingham Palace, Westminster, London SW1A 1AA, United Kingdom", user: user5)
 lego_five.photo.attach(io: file_five, filename: "lego.png", content_type: "image/png")
 lego_five.save
 
@@ -106,19 +104,19 @@ lego_nine = Lego.new(title: "Eiffel Tower", description: "Build your own replica
 lego_nine.photo.attach(io: file_nine, filename: "lego.png", content_type: "image/png")
 lego_nine.save
 
-lego_ten = Lego.new(title: "Pirate Ship", description: "Sail the high seas and search for hidden treasures with this thrilling Pirate Ship set!", price: 179.99, location: "Skull Island, Caribbean", user: user5)
+lego_ten = Lego.new(title: "Pirate Ship", description: "Sail the high seas and search for hidden treasures with this thrilling Pirate Ship set!", price: 179.99, location: "Buckingham Palace, Westminster, London SW1A 1AA, United Kingdom", user: user5)
 lego_ten.photo.attach(io: file_ten, filename: "lego.png", content_type: "image/png")
 lego_ten.save
 
-lego_eleven = Lego.new(title: "Technic Bugatti Chiron", description: "Experience the precision engineering of the Bugatti Chiron with this amazing Technic set!", price: 349.99, location: "Molsheim, France", user: user1)
+lego_eleven = Lego.new(title: "Technic Bugatti Chiron", description: "Experience the precision engineering of the Bugatti Chiron with this amazing Technic set!", price: 349.99, location: "The Shard, 32 London Bridge Street, London SE1 9SG, United Kingdom", user: user1)
 lego_eleven.photo.attach(io: file_eleven, filename: "lego11.png", content_type: "image/png")
 lego_eleven.save
 
-lego_twelve = Lego.new(title: "City Passenger Train", description: "Hop aboard the City Passenger Train and embark on a railway adventure!", price: 129.99, location: "Grand Central Station, New York", user: user2)
+lego_twelve = Lego.new(title: "City Passenger Train", description: "Hop aboard the City Passenger Train and embark on a railway adventure!", price: 129.99, location: "The Shard, 32 London Bridge Street, London SE1 9SG, United Kingdom", user: user2)
 lego_twelve.photo.attach(io: file_twelve, filename: "lego.png", content_type: "image/png")
 lego_twelve.save
 
-lego_thirteen = Lego.new(title: "Architecture Statue of Liberty", description: "Recreate the iconic Statue of Liberty in stunning detail with this Architecture set!", price: 109.99, location: "Liberty Island, New York", user: user3)
+lego_thirteen = Lego.new(title: "Architecture Statue of Liberty", description: "Recreate the iconic Statue of Liberty in stunning detail with this Architecture set!", price: 109.99, location: "The Shard, 32 London Bridge Street, London SE1 9SG, United Kingdom", user: user3)
 lego_thirteen.photo.attach(io: file_thirteen, filename: "lego.png", content_type: "image/png")
 lego_thirteen.save
 
@@ -126,15 +124,15 @@ lego_fourteen = Lego.new(title: "Ideas Tree House", description: "Escape to the 
 lego_fourteen.photo.attach(io: file_fourteen, filename: "lego.png", content_type: "image/png")
 lego_fourteen.save
 
-lego_fifteen = Lego.new(title: "Speed Champions Ferrari", description: "Feel the speed and elegance of Ferrari with this thrilling Speed Champions set!", price: 79.99, location: "Maranello, Italy", user: user5)
+lego_fifteen = Lego.new(title: "Speed Champions Ferrari", description: "Feel the speed and elegance of Ferrari with this thrilling Speed Champions set!", price: 79.99, location: "Tower Bridge, Tower Bridge Road, London SE1 2UP, United Kingdom", user: user5)
 lego_fifteen.photo.attach(io: file_fifteen, filename: "lego.png", content_type: "image/png")
 lego_fifteen.save
 
-lego_sixteen = Lego.new(title: "Ideas NASA Apollo Saturn V", description: "Relive the historic Apollo Moon missions with this incredible NASA Apollo Saturn V set!", price: 249.99, location: "Kennedy Space Center, Florida", user: user1)
+lego_sixteen = Lego.new(title: "Ideas NASA Apollo Saturn V", description: "Relive the historic Apollo Moon missions with this incredible NASA Apollo Saturn V set!", price: 249.99, location: "Buckingham Palace, Westminster, London SW1A 1AA, United Kingdom", user: user1)
 lego_sixteen.photo.attach(io: file_sixteen, filename: "lego.png", content_type: "image/png")
 lego_sixteen.save
 
-lego_seventeen = Lego.new(title: "Marvel Super Heroes Iron Man Hall of Armor", description: "Step into Tony Stark's workshop and suit up with the Iron Man Hall of Armor set!", price: 129.99, location: "Stark Tower, New York", user: user2)
+lego_seventeen = Lego.new(title: "Marvel Super Heroes Iron Man Hall of Armor", description: "Step into Tony Stark's workshop and suit up with the Iron Man Hall of Armor set!", price: 129.99, location: "Tower Bridge, Tower Bridge Road, London SE1 2UP, United Kingdom", user: user2)
 lego_seventeen.photo.attach(io: file_seventeen, filename: "lego.png", content_type: "image/png")
 lego_seventeen.save
 
@@ -146,15 +144,15 @@ lego_nineteen = Lego.new(title: "Disney Castle", description: "Enter the magical
 lego_nineteen.photo.attach(io: file_nineteen, filename: "lego.png", content_type: "image/png")
 lego_nineteen.save
 
-lego_twenty = Lego.new(title: "Architecture Sydney Opera House", description: "Recreate the iconic Sydney Opera House with this captivating Architecture set!", price: 129.99, location: "Sydney, Australia", user: user5)
+lego_twenty = Lego.new(title: "Architecture Sydney Opera House", description: "Recreate the iconic Sydney Opera House with this captivating Architecture set!", price: 129.99, location: "Buckingham Palace, Westminster, London SW1A 1AA, United Kingdom", user: user5)
 lego_twenty.photo.attach(io: file_twenty, filename: "lego.png", content_type: "image/png")
 lego_twenty.save
 
-lego_twenty_one = Lego.new(title: "Ideas NASA Apollo 11 Lunar Lander", description: "Celebrate the 50th anniversary of the Apollo 11 Moon landing with this detailed Lunar Lander set!", price: 109.99, location: "Tranquility Base, Moon", user: user1)
+lego_twenty_one = Lego.new(title: "Ideas NASA Apollo 11 Lunar Lander", description: "Celebrate the 50th anniversary of the Apollo 11 Moon landing with this detailed Lunar Lander set!", price: 109.99, location: "Buckingham Palace, Westminster, London SW1A 1AA, United Kingdom", user: user1)
 lego_twenty_one.photo.attach(io: file_twenty_one, filename: "lego.png", content_type: "image/png")
 lego_twenty_one.save
 
-lego_twenty_two = Lego.new(title: "Technic Porsche 911 GT3 RS", description: "Experience the engineering excellence of the Porsche 911 GT3 RS with this incredible Technic set!", price: 299.99, location: "Stuttgart, Germany", user: user2)
+lego_twenty_two = Lego.new(title: "Technic Porsche 911 GT3 RS", description: "Experience the engineering excellence of the Porsche 911 GT3 RS with this incredible Technic set!", price: 299.99, location: "Tower Bridge, Tower Bridge Road, London SE1 2UP, United Kingdom", user: user2)
 lego_twenty_two.photo.attach(io: file_twenty_two, filename: "lego.png", content_type: "image/png")
 lego_twenty_two.save
 
@@ -162,19 +160,19 @@ lego_twenty_three = Lego.new(title: "Creator Expert Taj Mahal", description: "Re
 lego_twenty_three.photo.attach(io: file_twenty_three, filename: "lego.png", content_type: "image/png")
 lego_twenty_three.save
 
-lego_twenty_four = Lego.new(title: "Ideas Ship in a Bottle", description: "Set sail with this elegant Ship in a Bottle set, capturing the beauty of nautical craftsmanship!", price: 89.99, location: "Port City, Unknown Seas", user: user4)
+lego_twenty_four = Lego.new(title: "Ideas Ship in a Bottle", description: "Set sail with this elegant Ship in a Bottle set, capturing the beauty of nautical craftsmanship!", price: 89.99, location: "Tower Bridge, Tower Bridge Road, London SE1 2UP, United Kingdom", user: user4)
 lego_twenty_four.photo.attach(io: file_twenty_four, filename: "lego.png", content_type: "image/png")
 lego_twenty_four.save
 
-lego_twenty_five = Lego.new(title: "Creator Expert London Bridge", description: "Build the iconic London Bridge and showcase the grandeur of this historic landmark!", price: 149.99, location: "London, United Kingdom", user: user5)
+lego_twenty_five = Lego.new(title: "Creator Expert London Bridge", description: "Build the iconic London Bridge and showcase the grandeur of this historic landmark!", price: 149.99, location: "Tower Bridge, Tower Bridge Road, London SE1 2UP, United Kingdom", user: user5)
 lego_twenty_five.photo.attach(io: file_twenty_five, filename: "lego.png", content_type: "image/png")
 lego_twenty_five.save
 
-lego_twenty_six = Lego.new(title: "Architecture Great Wall of China", description: "Embark on a journey to ancient China and build the magnificent Great Wall with this Architecture set!", price: 119.99, location: "China", user: user1)
+lego_twenty_six = Lego.new(title: "Architecture Great Wall of China", description: "Embark on a journey to ancient China and build the magnificent Great Wall with this Architecture set!", price: 119.99, location: "Tower Bridge, Tower Bridge Road, London SE1 2UP, United Kingdom", user: user1)
 lego_twenty_six.photo.attach(io: file_twenty_six, filename: "lego.png", content_type: "image/png")
 lego_twenty_six.save
 
-lego_twenty_seven = Lego.new(title: "Technic Lamborghini Huracán Super Trofeo EVO", description: "Feel the power and speed of the Lamborghini Huracán Super Trofeo EVO with this amazing Technic set!", price: 299.99, location: "Sant'Agata Bolognese, Italy", user: user2)
+lego_twenty_seven = Lego.new(title: "Technic Lamborghini Huracán Super Trofeo EVO", description: "Feel the power and speed of the Lamborghini Huracán Super Trofeo EVO with this amazing Technic set!", price: 299.99, location: "Buckingham Palace, Westminster, London SW1A 1AA, United Kingdom", user: user2)
 lego_twenty_seven.photo.attach(io: file_twenty_seven, filename: "lego.png", content_type: "image/png")
 lego_twenty_seven.save
 
