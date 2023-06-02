@@ -19,6 +19,11 @@
   border-radius: 5px;
 }
 
+.user-card-content{
+  padding: 20px;
+  border-radius: 5px;
+}
+
 .card-title {
   font-size: 18px;
   font-weight: bold;
@@ -32,6 +37,12 @@
 .card-description {
   font-size: 14px;
   line-height: 1.5;
+}
+
+.booking-card {
+position: sticky !important;
+position: -webkit-sticky;
+top: 0;
 }
 
 .lego-card-footer {
