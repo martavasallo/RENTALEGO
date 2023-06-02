@@ -3,12 +3,12 @@
   <div class="row">
     <div class="col-8">
       <div class="lego-show-card lego-card">
-        <h1 class="lego-heading">A bit more about this lego...</h1>
+        <h1 class="lego-heading">More about this lego...</h1>
 
           <div class="lego-card">
             <% if @lego.photo.attached? %> <%= cl_image_tag @lego.photo.key, height: 300, crop: :fill, class:"w-100"%> <% end %>
               <div class="lego-card-content">
-                  <div class="lego-card-title">
+                  <div class="lego-card-title"> 
                       <div class="flex">
                         <h4 class="card-title"><%= @lego.title %></h4>
                       </div>
