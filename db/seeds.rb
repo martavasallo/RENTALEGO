@@ -59,7 +59,9 @@ lego_two = Lego.new(title: "Window Exploration Bag", description: "The LEGO® SE
   lego_two.save
 
 lego_three = Lego.new(title: "Lion Knights' Castle", description: "This castle building set makes an immersive project for you or a top gift for any fan of history and castles. A classic build reimagined – Enjoy quality time crafting
+
   all the details of this Lion Knights' Castle (10305) buildable model, inspired by classic LEGO® castle sets from days gone by", price: 344.99, location: "180 Strand, Temple, London WC2R 1EA", user: user3)
+
   lego_three.photo.attach(io: file_three, filename: "lego.pic", content_type: "image/png")
   lego_three.save
 
