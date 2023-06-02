@@ -68,7 +68,9 @@
           </div>
           <%= f.button :submit, class: "btn btn-danger mt-2 w-100", value: "Book" %>
         <% end %>
+
       </div>
+
       <div class="lego-show-card">
         <h3>Details</h3>
         <div class="flex">
@@ -80,6 +82,7 @@
           </div>
         </div>
       </div>
+
       <div class="lego-show-card">
         <div class="flex-align">
           <h6 class="no-mb">Share</h6>
@@ -90,6 +93,14 @@
         </div>
     </div>
         </div>
+        <div class="lego-show-card lego-card">
+          <p class="lego-show-address"><%= @lego.location %></p>
+          <div style="width: 100%; height: 600px;"
+            data-controller="map"
+            data-map-markers-value="<%= @markers.to_json %>"
+            data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+          </div>
+        <div>
       </div>
     </div>
   </div>
