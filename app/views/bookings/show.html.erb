@@ -1,15 +1,18 @@
 
-<div class="middle-card">
 <div class="card">
-  <% if @booking.lego.photo.attached? %>
-  <%= cl_image_tag @booking.lego.photo.key, height: 300, crop: :fill, class:"w-100" %>
-  <% end %>
-  <h2>Congratulations!</h2>
-  <h5>Booking confirmed</h5>
-  <h4><b><%= @booking.lego.title %></b></h4>
-  <h6>from <%= @booking.start_date %></h6>
-  <h6>to <%= @booking.end_date %></h6>
-  <%= link_to "My bookings", dashboard_path, class:"btn btn-primary" %>
-  <%# <a href="#" class="btn btn-primary">Go somewhere</a> %>
-</div>
+  <div style="text-align: center";>
+    <div class="card-image">
+      <% if @booking.lego.photo.attached? %>
+      <%= cl_image_tag @booking.lego.photo.key, height: 200, crop: :fill, class: "h-100 w-auto" %>
+      <% end %>
+    </div>
+    <div class="card-body">
+      <h2>Congratulations!</h2>
+      <h5>Booking confirmed</h5>
+      <h4><b><%= @booking.lego.title %></b></h4>
+      <h6>from <%= @booking.start_date %></h6>
+      <h6>to <%= @booking.end_date %></h6>
+      <%= link_to "My bookings", dashboard_path, class: "btn btn-primary" %>
+    </div>
+  </div>
 </div>
