@@ -1,9 +1,7 @@
 // Import page-specific CSS files here.
 @import "home";
 @import "lego";
-<<<<<<< HEAD
 @import "show";
-=======
 
 .card-link {
   position: absolute;
@@ -12,8 +10,12 @@
   left: 0;
   width: 100%;
   }
+.avatar-pic{
+  width: 100px;
+  border-radius: 50%;
+}
 
 // .main-btn {
 //   position: absolute;
 // }
->>>>>>> master
+

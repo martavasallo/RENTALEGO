@@ -1,6 +1,9 @@
 <div class="container">
  <div>
     <h2><%=current_user.username%>'s account</h2>
+    <div class="avatar-pic">
+    <% if current_user.photo.attached? %> <%= cl_image_tag current_user.photo.key, height: 300, crop: :fill, class:"w-100"%><% end %>
+    </div>
     <p>About me: <%= current_user.bio %></p>
     <p>Email: <%= current_user.email %></p>
   </div>
