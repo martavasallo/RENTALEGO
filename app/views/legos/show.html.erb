@@ -1,10 +1,8 @@
-
 <div class="container mt-3">
   <div class="row">
     <div class="col-8">
       <div class="lego-show-card lego-card">
         <h1 class="lego-heading">A bit more about this lego...</h1>
-
           <div class="lego-card">
             <% if @lego.photo.attached? %> <%= cl_image_tag @lego.photo.key, height: 300, crop: :fill, class:"w-100"%> <% end %>
               <div class="lego-card-content">
@@ -19,8 +17,6 @@
                   </div>
               </div>
           </div>
-
-
               <div class="container mt-8">
                 <%= simple_form_for [@lego, @review] do |f| %>
                   <div class="row">
@@ -38,7 +34,6 @@
                   </div>
                 <% end %>
               </div>
-
           <div class="container mt-5">
             <ul class="list-group">
               <% @lego.reviews.reverse_each do |review| %>
@@ -59,7 +54,6 @@
               <% end %>
             </ul>
           </div>
-
 </div>
 </div>
 <div class="col-4">
@@ -74,6 +68,7 @@
           </div>
           <%= f.button :submit, class: "btn btn-danger mt-2 w-100", value: "Book" %>
         <% end %>
+
       </div>
 
       <div class="lego-show-card">
@@ -109,4 +104,14 @@
       </div>
     </div>
   </div>
+
+
+     <div class="lego-show-card lego-card">
+          <p class="lego-show-address"><%= @lego.location %></p>
+          <div style="width: 100%; height: 600px;"
+            data-controller="map"
+            data-map-markers-value="<%= @markers.to_json %>"
+            data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+          </div>
+        <div>
   </div>
