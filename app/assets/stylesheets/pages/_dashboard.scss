@@ -1,0 +1,33 @@
+.flex-container {
+  display: flex;
+  justify-content: left;
+}
+
+.avatar-dashboard {
+  background-position: center;
+  img {
+    border-radius: 25px;
+  }
+}
+
+.avatar-heading1 {
+  font-family: 'Press Start 2P', cursive;
+  color: #E41E26; /* Red color */
+  font-size: 16px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  text-align: left;
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+.avatar-heading2 {
+  font-family: 'Press Start 2P', cursive;
+  color: #E41E26; /* Red color */
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  text-align: left;
+  margin-top: 10px;
+  margin-bottom: 20px;
+}

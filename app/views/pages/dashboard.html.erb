@@ -1,80 +1,104 @@
 <div class="container">
 
-  <div>
-    <h2 class="lego-heading"><%=current_user.username%>'s account</h2>
-       <div class="avatar-pic2">
-         <% if current_user.photo.attached? %> <%= cl_image_tag current_user.photo.key%><% end %>
-       </div>
-    <p class="lego-heading2">About me: <%= current_user.bio %></p>
-    <p class="lego-heading2">Email: <%= current_user.email %></p>
- <div>
+  <div class="flex-container py-4">
 
+    <div class="avatar-dashboard flex-item">
+      <% if current_user.photo.attached? %>
+        <%= cl_image_tag current_user.photo.key, height: 150, crop: :fill, class: "w-auto" %>
+      <% end %>
+    </div>
+
+    <div class="container pl-4">
+      <div class="flex-item">
+        <h2 class="avatar-heading1 flex-item"><%= current_user.username %>'s account</h2>
+        <p class="avatar-heading2 flex-item"><b>About me: </b><%= current_user.bio %></p>
+        <p class="avatar-heading2 flex-item">Email: <%= current_user.email %></p>
+      </div>
+    </div>
   </div>
+
+  <div class="flex">
+    <div class="lego-heading4">
+      <%= link_to "Create a new listing!", new_lego_path, class: "btn btn-primary" %>
+    </div>
+  </div>
+
+
   <div class="my-legos row">
     <h2 class="lego-heading3">My legos:</h2>
-    <div class="flex">
-      <div class="lego-heading4"><%= link_to "Create a new listing!", new_lego_path %></div>
-    </div>
     <% current_user.legos.each do |lego| %>
       <div class="col-md-4">
-           <div class="lego-card">
-            <% if lego.photo.attached? %> <%= cl_image_tag lego.photo.key, height: 300, crop: :fill, class:"w-100"%><% end %>
-              <div class="lego-card-content">
-                  <div class="lego-card-title">
-                      <div class="flex">
-                        <h4 class="card-title"><%= lego.title %></h4>
-                      </div>
-                  </div>
-                  <p class="card-location"><%= lego.location %></p>
-                  <div class="flex align-items-center">
-                    <p class="card-description"><%= lego.description.truncate(65) %></p>
-                  </div>
-              </div>
-            <div class="lego-card-footer justify-content-around">
-                    <div class="lego-card-avatar">  <%= image_tag "logo.png", class: "small-logo" %></div>
-              <div class="lego-card-details">
-                <div class="lego-card-actions"> <%= link_to "More info", lego_path(lego), class: "btn btn-primary" %></div>
-                <div class="lego-card-price"> <i class="fa-solid fa-euro-sign"></i> <span><%= lego.price %></span></div>
+        <div class="lego-card">
+          <% if lego.photo.attached? %>
+            <%= cl_image_tag lego.photo.key, height: 300, crop: :fill, class: "w-100" %>
+          <% end %>
+          <div class="lego-card-content">
+            <div class="lego-card-title">
+              <div class="flex">
+                <h4 class="card-title"><%= lego.title %></h4>
               </div>
             </div>
+            <p class="card-location"><%= lego.location %></p>
+            <div class="flex align-items-center">
+              <p class="card-description"><%= lego.description.truncate(65) %></p>
+            </div>
+          </div>
+          <div class="lego-card-footer justify-content-around">
+            <div class="lego-card-avatar">
+              <%= image_tag "logo.png", class: "small-logo" %>
+            </div>
+            <div class="lego-card-details">
+              <div class="lego-card-actions">
+                <%= link_to "More info", lego_path(lego), class: "btn btn-primary" %>
+              </div>
+              <div class="lego-card-price">
+                <i class="fa-solid fa-euro-sign"></i>
+                <span><%= lego.price %></span>
+              </div>
+            </div>
+          </div>
         </div>
-
       </div>
     <% end %>
   </div>
-<br>
-<br>
 
   <div class="my-legos row">
     <h2 class="lego-heading3">My bookings:</h2>
     <% current_user.bookings.each do |booking| %>
       <div class="col-md-4">
-           <div class="lego-card">
-            <% if booking.lego.photo.attached? %> <%= cl_image_tag booking.lego.photo.key, height: 300, crop: :fill, class:"w-100"%><% end %>
-              <div class="lego-card-content">
-                  <div class="lego-card-title">
-                      <div class="flex">
-                        <h4 class="card-title"><%= booking.lego.title %></h4>
-                      </div>
-                  </div>
-                  <p class="card-location"><%= booking.lego.location %></p>
-                  <div class="flex align-items-center">
-                    <p class="card-description"><%= booking.lego.description.truncate(65) %></p>
-                  </div>
+        <div class="lego-card">
+          <% if booking.lego.photo.attached? %>
+            <%= cl_image_tag booking.lego.photo.key, height: 300, crop: :fill, class: "w-100" %>
+          <% end %>
+          <div class="lego-card-content">
+            <div class="lego-card-title">
+              <div class="flex">
+                <h4 class="card-title"><%= booking.lego.title %></h4>
               </div>
-            <div class="lego-card-footer justify-content-around">
-                    <div class="lego-card-avatar">  <%= image_tag "logo.png", class: "small-logo" %></div>
-              <div class="lego-card-details">
-                <div class="lego-card-price"> <i class="fa-solid fa-euro-sign"></i> <span><%= booking.lego.price %></span></div>
+            </div>
+            <p class="card-location"><%= booking.lego.location %></p>
+            <div class="flex align-items-center">
+              <p class="card-description"><%= booking.lego.description.truncate(65) %></p>
+            </div>
+          </div>
+          <div class="lego-card-footer justify-content-around">
+            <div class="lego-card-avatar">
+              <%= image_tag "logo.png", class: "small-logo" %>
+            </div>
+            <div class="lego-card-details">
+              <div class="lego-card-price">
+                <i class="fa-solid fa-euro-sign"></i>
+                <span><%= booking.lego.price %></span>
               </div>
               <div class="booking-dates">
-                    <p class="card-title" style="color: red;">From the <%= booking.start_date %></p>
-                    <p class="card-title" style="color: red;">Until the <%= booking.end_date %></p>
-                    <%= link_to '', lego_path(booking.lego.id), class: 'card-link'  %>
-                </div>
+                <p class="card-title" style="color: red;">From the <%= booking.start_date %></p>
+                <p class="card-title" style="color: red;">Until the <%= booking.end_date %></p>
+                <%= link_to '', lego_path(booking.lego.id), class: 'card-link' %>
+              </div>
             </div>
+          </div>
         </div>
-
       </div>
     <% end %>
   </div>
+</div>
