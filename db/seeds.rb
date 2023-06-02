@@ -50,19 +50,19 @@ Lego.destroy_all
 User.destroy_all
 
 puts "Creating users..."
-user1 = User.new(username: "JonahTheLegoMan", bio: "I grew up playing with legos and there is nothing i love more in the world! I want to share this passino with the world and see what other people have that they can share with me:)", email: "jonah@gmail.com", password: "secret")
+user1 = User.new(username: "JonahLegoMan", bio: "I grew up playing with legos and there is nothing i love more in the world! I want to share this passino with the world and see what other people have that they can share with me:)", email: "jonah@gmail.com", password: "secret")
 user1.photo.attach(io: file_profile_one, filename: "avatar.pic", content_type: "image/png")
 user1.save
-user2 = User.new(username: "MartaTheLegoGOAT", bio: "I am the best lego collector in the world and i just want to be here to first of all show it off to the world and see if there is anything i can add to my collection", email: "marta@gmail.com", password: "secret")
+user2 = User.new(username: "LegoGOAT", bio: "I am the best lego collector in the world and i just want to be here to first of all show it off to the world and see if there is anything i can add to my collection", email: "marta@gmail.com", password: "secret")
 user2.photo.attach(io: file_profile_two, filename: "avatar.pic", content_type: "image/png")
 user2.save
-user3 = User.new(username: "BricksNostalgia", bio: "Greetings, fellow Lego enthusiasts! I go by the name MiniBrickMaster, and my love for Legos knows no bounds. As an adult collector, I find immense joy in the intricate details and clever design of Lego sets. For me, collecting Legos is a way to unwind and relive the carefree days of my childhood. ", email: "brickhunter86@example.com" , password:"secret")
+user3 = User.new(username: "BrickNostalgia", bio: "Greetings, fellow Lego enthusiasts! I go by the name MiniBrickMaster, and my love for Legos knows no bounds. As an adult collector, I find immense joy in the intricate details and clever design of Lego sets. For me, collecting Legos is a way to unwind and relive the carefree days of my childhood. ", email: "brickhunter86@example.com" , password:"secret")
 user3.photo.attach(io: file_profile_three, filename: "avatar.pic", content_type: "image/png")
 user3.save
-user4 = User.new(username: "MiniBrickMaster", bio: "Hey there, fellow Lego enthusiasts! I'm BrickHunter86, and I've been collecting Legos for over a decade now. What started as a childhood hobby turned into a lifelong passion. The reason I collect Legos is simple: they ignite my imagination and transport me to a world of endless possibilities. ", email: "minibrickmaster@example.com", password:"secret")
+user4 = User.new(username: "BrickMaster", bio: "Hey there, fellow Lego enthusiasts! I'm BrickHunter86, and I've been collecting Legos for over a decade now. What started as a childhood hobby turned into a lifelong passion. The reason I collect Legos is simple: they ignite my imagination and transport me to a world of endless possibilities. ", email: "minibrickmaster@example.com", password:"secret")
 user4.photo.attach(io: file_profile_four, filename: "avatar.pic", content_type: "image/png")
 user4.save
-user5 = User.new(username: "BrickHunter86", bio: "Hello, fellow Lego lovers! I'm BricksNostalgia, and I'm a proud collector of Legos. For me, collecting these iconic building blocks is all about revisiting cherished memories from my childhood. As I handle each brick, I'm transported back to a time when the world seemed full of wonder and endless possibilities.", email:"bricksnostalgia@example.com", password:"secret")
+user5 = User.new(username: "BrickHunter", bio: "Hello, fellow Lego lovers! I'm BricksNostalgia, and I'm a proud collector of Legos. For me, collecting these iconic building blocks is all about revisiting cherished memories from my childhood. As I handle each brick, I'm transported back to a time when the world seemed full of wonder and endless possibilities.", email:"bricksnostalgia@example.com", password:"secret")
 user5.photo.attach(io: file_profile_five, filename: "avatar.pic", content_type: "image/png")
 user5.save
 

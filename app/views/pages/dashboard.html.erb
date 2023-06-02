@@ -43,20 +43,11 @@
               <p class="card-description"><%= lego.description.truncate(65) %></p>
             </div>
           </div>
-          <div class="lego-card-footer justify-content-around">
-            <div class="lego-card-avatar">
-              <%= image_tag "logo.png", class: "small-logo" %>
-            </div>
-            <div class="lego-card-details">
-              <div class="lego-card-actions">
-                <%= link_to "More info", lego_path(lego), class: "btn btn-primary" %>
-              </div>
-              <div class="lego-card-price">
-                <i class="fa-solid fa-euro-sign"></i>
-                <span><%= lego.price %></span>
-              </div>
-            </div>
+          <div class="lego-card-details">
+            <div> <% if lego.user.photo.attached? %> <%= cl_image_tag lego.user.photo.key, class:"avatar"%> <% end %> </div>
+            <div class="lego-card-price"> <i class="fa-solid fa-euro-sign"></i> <span><%= lego.price %></span></div>
           </div>
+          <%= link_to '', lego_path(lego), class: 'card-link'  %>
         </div>
       </div>
     <% end %>
