@@ -63,42 +63,49 @@
 </div>
 </div>
 <div class="col-4">
-  <div class="lego-show-card">
-    <h5>Book this Lego Master Piece!</h5>
-    <%= simple_form_for [@lego, @booking] do |f| %>
-      <div class="input-group">
-        <%= f.input :start_date, label: "From:" %>
+      <div class="lego-show-card">
+        <h5>Book this Lego Master Piece!</h5>
+        <%= simple_form_for [@lego, @booking] do |f| %>
+          <div class="input-group">
+            <%= f.input :start_date, label: "From:" %>
+          </div>
+          <div class="input-group mt-2">
+            <%= f.input :end_date, label: "To:" %>
+          </div>
+          <%= f.button :submit, class: "btn btn-danger mt-2 w-100", value: "Book" %>
+        <% end %>
       </div>
-      <div class="input-group mt-2">
-        <%= f.input :end_date, label: "To:" %>
-      </div>
-      <%= f.button :submit, class: "btn btn-danger mt-2 w-100", value: "Book" %>
-    <% end %>
-  </div>
 
-  <div class="lego-show-card">
-    <h3>Details</h3>
+      <div class="lego-show-card">
+        <h3>Details</h3>
+        <div class="flex">
+          <div class="flex ms-3">
+            <%= @lego.title %>
+          </div>
+          <div class="flex ms-3">
+            <%= @lego.price * rand(1...10) %>€
+          </div>
+        </div>
+      </div>
 
-    <div class="flex">
-      <div class="flex ms-3">
-        <%= @lego.title %>
-      </div>
-      <div class="flex ms-3">
-        <%= @lego.price * rand(1...10) %>€
-      </div>
-    </div>
-  </div>
-
-  <div class="lego-show-card">
-    <div class="flex-align">
-      <h6 class="no-mb">Share</h6>
-      <div class="flex">
-        <i class="fa-brands fa-facebook-square text-danger me-2" style="font-size: 45px;"></i>
-        <i class="fa-brands fa-twitter-square text-danger me-2" style="font-size: 45px;"></i>
-        <i class="fa-brands fa-pinterest-square text-danger me-2" style="font-size: 45px;"></i>
-      </div>
+      <div class="lego-show-card">
+        <div class="flex-align">
+          <h6 class="no-mb">Share</h6>
+          <div class="flex">
+            <i class="fa-brands fa-facebook-square text-danger me-2" style="font-size: 45px;"></i>
+            <i class="fa-brands fa-twitter-square text-danger me-2" style="font-size: 45px;"></i>
+            <i class="fa-brands fa-pinterest-square text-danger me-2" style="font-size: 45px;"></i>
+        </div>
     </div>
         </div>
+        <div class="lego-show-card lego-card">
+          <p class="lego-show-address"><%= @lego.location %></p>
+          <div style="width: 100%; height: 600px;"
+            data-controller="map"
+            data-map-markers-value="<%= @markers.to_json %>"
+            data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+          </div>
+        <div>
       </div>
     </div>
   </div>
