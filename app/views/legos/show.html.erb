@@ -1,21 +1,38 @@
-<div class="container margin-top-negative">
-  <br><br><br><br>
-    <div class="row">
-      <div class="col-8">
-        <div class="lego-show-card lego-card">
-          <h1><%= @lego.title %></h1>
-          <div class="row">
-            <div class="col-6">
-              <% if @lego.photo.attached? %>
-              <%= cl_image_tag @lego.photo.key, height: 300, crop: :fill, class:"w-100" %>
-              <% end %>
-            </div>
-            <div class="col-6">
-              <div class="user-info">
-                <h3><strong>About the owner: </strong><%= @lego.user.username %></h2>
-                <div class="avatar-pic">
-                <% if @lego.user.photo.attached? %>
-                  <%= cl_image_tag @lego.user.photo.key, height: 100, crop: :fill, class:"w-100" %>
+<div class="container mt-3">
+  <div class="row">
+    <div class="col-8">
+      <div class="lego-show-card lego-card">
+
+        <h1 class="lego-heading">A bit more about this lego...</h1>
+          <div class="lego-card">
+            <% if @lego.photo.attached? %> <%= cl_image_tag @lego.photo.key, height: 300, crop: :fill, class:"w-100"%> <% end %>
+              <div class="lego-card-content">
+                  <div class="lego-card-title"> 
+                      <div class="flex">
+                        <h4 class="card-title"><%= @lego.title %></h4>
+                      </div>
+                  </div>
+                  <p class="card-location"><%= @lego.location %></p>
+                  <div class="flex align-items-center">
+                    <p class="card-description"><%= @lego.description %></p>
+                  </div>
+              </div>
+          </div>
+              <div class="container mt-8">
+                <%= simple_form_for [@lego, @review] do |f| %>
+                  <div class="row">
+                    <div class="col-md-6 mb-3">
+                      <%= f.label :rating, class: 'form-label' %>
+                      <%= f.input :rating, collection: 0..5, label: false, include_blank: 'Select Rating', class: 'form-select' %>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                      <%= f.label :content, class: 'form-label' %>
+                      <%= f.input :content, label: false, class: 'form-control', rows: 6, placeholder: 'Enter your content here' %>
+                    </div>
+                  </div>
+                  <div class="d-flex justify-content-center">
+                    <%= f.button :submit, 'Submit', class: 'btn btn-danger text-white' %>
+                  </div>
                 <% end %>
                 </div>
                 <p><%= @lego.user.bio %></p>
@@ -78,9 +95,7 @@
             <div class="flex ms-3"> <%= @lego.title %></div>
             <div class="flex ms-3"> <%= @lego.price*rand(1...10) %>€ </div>
           </div>
-
       </div>
-
       <div class="lego-show-card">
         <div class="flex-align">
           <h6 class="no-mb">Share</h6>
@@ -94,11 +109,5 @@
         </div>
       </div>
     </div>
-
   </div>
-  <div style="height: 10px">
-</div>
-
-<%# <div style="height: 10px">
-</div> %>
-
+  </div>
