@@ -1,56 +1,65 @@
 <div class="container mt-3">
   <div class="row">
     <div class="col-12">
-      <h1>List of Legos</h1>
+      <h1 class="lego-heading">List of Legos</h1>
     </div>
   </div>
 
-  <div>
+  <div class="lego-search-form">
     <%= form_with url: legos_path, method: :get, class: "d-flex" do %>
       <%= text_field_tag :query,
         params[:query],
         class: "form-control",
         placeholder: "Find a lego"
       %>
-      <%= submit_tag "Search", class: "btn btn-primary" %>
+      <%= submit_tag "Search", class: "lego-search-submit" %>
     <% end %>
   </div>
 
-  <div class="row">
-    <div class="col">
-      <% if @query %> <p>You searched for <strong><%= @query %></strong>. We found <%= @legos.count %> legos out of our <%= Lego.count %> on our website.</p> <% else %>
-        <p>All <%= Lego.count %> legos.</p> <% end %>
-    </div>
+<div class="row">
+  <div class="col">
+    <% if @query.present? %>
+      <% if @legos.present? %>
+        <p class="counter-text">You searched for <strong><%= @query %></strong>. We found <%= @legos.count %> Lego<%= 's' unless @legos.count == 1 %> on our website.</p>
+      <% else %>
+        <p class="counter-text">You searched for <strong><%= @query %></strong>. We found no Legos on our website.</p>
+      <% end %>
+    <% else %>
+      <p class="counter-text">We have <%= @legos.count %> Lego<%= 's' unless @legos.count == 1 %> on our website.</p>
+    <% end %>
   </div>
+</div>
 
   <div class="row">
     <% @legos.each do |lego| %>
-      <div class="col-md-4">
+      <div class="col-md-3">
+
         <div class="lego-card">
-
-        
-          <% if lego.photo.attached? %> <%= cl_image_tag lego.photo.key, height: 300, crop: :fill, class:"w-100"%><% end %>
-          <div class="lego-card-content">
-            <div class="lego-card-title">
-            <div class="flex">
-              <h4><%= lego.title %></h4></div>
+            <% if lego.photo.attached? %> <%= cl_image_tag lego.photo.key, height: 300, crop: :fill, class:"w-100"%><% end %>
+              <div class="lego-card-content">
+                  <div class="lego-card-title">
+                      <div class="flex">
+                        <h4 class="card-title"><%= lego.title %></h4>
+                      </div>
+                  </div>
+                  <p class="card-location"><%= lego.location %></p>
+                  <div class="flex align-items-center">
+                    <p class="card-description"><%= lego.description.truncate(65) %></p>
+                  </div>
+              </div>
+            <div class="lego-card-footer justify-content-around">
+                    <div class="lego-card-avatar">  <%= image_tag "logo.png", class: "small-logo" %></div>
+              <div class="lego-card-details">
+                <div class="lego-card-actions"> <%= link_to "More info", lego_path(lego), class: "btn btn-primary" %></div>
+                <div class="lego-card-price"> <i class="fa-solid fa-euro-sign"></i> <span><%= lego.price %></span></div>
+              </div>
             </div>
-            <p><%= lego.location %></p>
-
-            <div class="flex align-items-center"><span><%= lego.description %></span> </div>
-          </div>
-          <div class="flex justify-content-around">
-            <div class="lego-card-actions"> <%= link_to "More info", lego_path(lego) %></div>
-            <div class="flex align-items-center ms-3"><i class="fa-solid fa-euro-sign"></i> <span><%= lego.price %></span></div>
-          </div>
         </div>
       </div>
     <% end %>
   </div>
 </div>
 
-<div style="height: 10px">
-  </div>
             <%# <%= link_to "Edit", edit_lego_path(lego), class: "ms-3 text-warning" %>
             <%# <%= link_to "Remove", lego_path(lego), %>
                 <%# data: { turbo_method: :delete, turbo_confirm: "Are you sure?" },
