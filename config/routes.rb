@@ -6,9 +6,6 @@ Rails.application.routes.draw do
 
   resources :legos do
     resources :bookings, only: [:create]
-  end
-
-  resources :legos do
     resources :reviews, only: [:new, :create]
   end
 
