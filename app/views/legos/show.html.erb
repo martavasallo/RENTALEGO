@@ -1,97 +1,95 @@
-
 <div class="container mt-3">
   <div class="row">
     <div class="col-8">
       <div class="lego-show-card lego-card">
         <h1 class="lego-heading">More about this lego...</h1>
-          <div class="lego-card">
-            <div class="row">
-              <div class="col-6">
-                <% if @lego.photo.attached? %> <%= cl_image_tag @lego.photo.key, height: 300, crop: :fill, class:"w-100"%> <% end %>
-              </div>
-              <div class="col-6">
-                <div class="user-card-content">
-                  <div class="d-flex mb-3">
-                    <div class="d-flex flex-column justfiy-content-between">
-                      <h3><strong>About the owner:</strong></h3>
-                      <h2 class="m-0"><%= @lego.user.username %></h2>
-                    </div>
-                    <%# <div class=""> %>
 
-                      <div class="avatar-pic ms-3">
-                        <% if @lego.user.photo.attached? %>
-                          <%= cl_image_tag @lego.user.photo.key, height: 100, crop: :fill, class:"w-100" %>
-                        <% end %>
-                      </div>
-
-                    <%# </div> %>
-                  </div>
-                  <%= @lego.user.bio %>
-                </div>
-              </div>
+        <div class="lego-card">
+          <div class="row">
+            <div class="col-6 bio-lego-photo">
+              <% if @lego.photo.attached? %>
+                <%= cl_image_tag @lego.photo.key, height: 300, crop: :fill, class: "w-100 ms-3 mt-3 pe-3"%>
+              <% end %>
             </div>
 
-            <div class="user-card-content">
-              <div class="lego-card-title">
-                  <div class="flex">
-                    <h2 class="card-title"><%= @lego.title %></h2>
+            <div class="col-6">
+              <div class="info-card-content">
+                <div class="d-flex mb-3 mt-3">
+                  <div class="d-flex flex-column justfiy-content-between">
+                    <h5>About the owner:</h5>
+                    <h5 class="m-0"><strong><%= @lego.user.username %></strong></h5>
                   </div>
-              </div>
-              <p class="card-location"><%= @lego.location %></p>
-              <div class="flex align-items-center">
-                <p class="card-description"><%= @lego.description %></p>
+
+                  <div class="avatar-pic-bio">
+                    <% if @lego.user.photo.attached? %>
+                      <%= cl_image_tag @lego.user.photo.key, height: 100, crop: :fill, class: "w-100 rounded-circle" %>
+                    <% end %>
+                  </div>
+                </div>
+                <div class="bio"><%= @lego.user.bio %></div>
               </div>
             </div>
           </div>
-              <div class="container mt-8">
-                <%= simple_form_for [@lego, @review] do |f| %>
-                  <div class="row">
-                    <div class="col-md-6 mb-3">
-                      <%= f.label :rating, class: 'form-label' %>
-                      <%= f.input :rating, collection: 0..5, label: false, include_blank: 'Select Rating', class: 'form-select' %>
-                    </div>
-                    <div class="col-md-6 mb-3">
-                      <%= f.label :content, class: 'form-label' %>
-                      <%= f.input :content, label: false, class: 'form-control', rows: 6, placeholder: 'Enter your content here' %>
-                    </div>
-                  </div>
-                  <div class="d-flex justify-content-center">
-                    <%= f.button :submit, 'Submit', class: 'btn btn-danger text-white w-100' %>
-                  </div>
-                <% end %>
-              </div>
-          <div class="container mt-5">
-            <ul class="list-group">
-              <% @lego.reviews.reverse_each do |review| %>
-                <li class="list-group-item">
-                  <div class="d-flex align-items-center">
-                    <small>
-                      <% 5.times do |count| %>
-                        <% if review.rating > count %>
-                          <i class="fa-solid fa-star text-danger" style="font-size: 25px;"></i>
-                        <% else %>
-                          <i class="fa-regular fa-star text-danger" style="font-size: 25px;"></i>
-                        <% end %>
-                      <% end %>
-                    </small>
-                    <p class="ms-3"><%= review.content %></p>
-                  </div>
-                </li>
-              <% end %>
-            </ul>
 
-            <div class="lego-show-card lego-card">
-              <p class="lego-show-address"><%= @lego.location %></p>
-              <div style="width: 100%; height: 300px;"
-                data-controller="map"
-                data-map-markers-value="<%= @markers.to_json %>"
-                data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+          <div class="user-card-content">
+            <div class="lego-card-title">
+              <div class="flex">
+                <h4 class="card-title-lego ms-3 mt-3"><strong><%= @lego.title %></strong></h4>
               </div>
             </div>
+            <p class="card-location ms-3"><%= @lego.location %></p>
+            <div class="flex align-items-center">
+              <p class="ms-3"><%= @lego.description %></p>
+            </div>
+          </div>
+        </div>
 
+        <div class="container mt-8">
+          <%= simple_form_for [@lego, @review] do |f| %>
+            <div class="row">
+              <div class="col-md-6 mb-3">
+                <%= f.label :rating, class: "form-label" %>
+                <%= f.input :rating, collection: 0..5, label: false, include_blank: "Select Rating", class: "form-select" %>
+              </div>
+              <div class="col-md-6 mb-3">
+                <%= f.label :content, class: "form-label" %>
+                <%= f.input :content, label: false, class: "form-control", rows: 6, placeholder: "Enter your content here" %>
+              </div>
+            </div>
+            <div class="d-flex justify-content-center">
+              <%= f.button :submit, "Submit", class: "btn btn-danger text-white w-100" %>
+            </div>
+          <% end %>
+        </div>
+
+        <div class="container mt-5">
+          <ul class="list-group">
+            <% @lego.reviews.reverse_each do |review| %>
+              <li class="list-group-item">
+                <div class="d-flex align-items-center">
+                  <small>
+                    <% 5.times do |count| %>
+                      <% if review.rating > count %>
+                        <i class="fa-solid fa-star text-danger" style="font-size: 25px;"></i>
+                      <% else %>
+                        <i class="fa-regular fa-star text-danger" style="font-size: 25px;"></i>
+                      <% end %>
+                    <% end %>
+                  </small>
+                  <p class="ms-3"><%= review.content %></p>
+                </div>
+              </li>
+            <% end %>
+          </ul>
+
+          <div class="lego-show-card lego-card">
+            <p class="lego-show-address"><%= @lego.location %></p>
+            <div style="width: 100%; height: 300px;" data-controller="map" data-map-markers-value="<%= @markers.to_json %>" data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"></div>
           </div>
         </div>
       </div>
+    </div>
+
     <div class="col-4 booking-card">
       <div class="lego-show-card">
         <h5>Book this Lego Master Piece!</h5>
@@ -105,8 +103,9 @@
           <%= f.button :submit, class: "button btn btn-danger text-white w-100", value: "Book" %>
         <% end %>
       </div>
+
       <div class="lego-show-card">
-        <h3>Details</h3>
+        <h6><strong>Details</strong></h6>
         <div class="flex">
           <div class="flex ms-3">
             <%= @lego.title %>
@@ -116,9 +115,10 @@
           </div>
         </div>
       </div>
+
       <div class="lego-show-card">
         <div class="flex-align">
-          <h6 class="no-mb">Share</h6>
+          <h6 class="no-mb"><strong>Share</strong></h6>
           <div class="flex">
             <i class="fa-brands fa-facebook-square text-danger me-2" style="font-size: 45px;"></i>
             <i class="fa-brands fa-twitter-square text-danger me-2" style="font-size: 45px;"></i>

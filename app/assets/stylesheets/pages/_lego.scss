@@ -13,14 +13,10 @@
 .lego-card-price span {
   font-weight: bold;
 }
+
 .lego-card-content {
   background-color: #f8f9fa;
-  padding: 20px;
-  border-radius: 5px;
-}
-
-.user-card-content{
-  padding: 20px;
+  padding: 20px 20px 0 20px;
   border-radius: 5px;
 }
 
@@ -32,6 +28,8 @@
 .card-location {
   color: #777;
   margin-bottom: 10px;
+  font-size: small;
+  height: 50px;
 }
 
 .card-description {
@@ -40,14 +38,13 @@
 }
 
 .booking-card {
-position: sticky !important;
-position: -webkit-sticky;
-top: 0;
+  position: sticky !important;
+  position: -webkit-sticky;
+  top: 0;
 }
 
 .lego-card-footer {
   align-items: center;
-  margin-top: 10px;
 }
 
 .lego-card-avatar img {
@@ -74,6 +71,7 @@ top: 0;
 }
 .flex {
   display: flex;
+  height: 50px;
 }
 
 .lego-heading {
@@ -135,7 +133,7 @@ top: 0;
   box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 1px 5px 0 rgba(0,0,0,0.12), 0 3px 1px -2px rgba(0,0,0,0.2);
   img {
     object-fit: cover;
-    border-radius: 15px;
+    border-radius: 15px 15px 0 0;
   }
 }
 

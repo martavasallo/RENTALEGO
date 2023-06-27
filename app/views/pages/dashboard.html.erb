@@ -1,6 +1,5 @@
-<div class="container">
 
-  <div class="flex-container py-4">
+  <!--<div class="flex-container py-4">
 
     <div class="avatar-dashboard flex-item">
       <% if current_user.photo.attached? %>
@@ -15,17 +14,19 @@
         <p class="avatar-heading2 flex-item">Email: <%= current_user.email %></p>
       </div>
     </div>
-  </div>
-
-  <div class="flex">
-    <div class="lego-heading4">
-      <%= link_to "Create a new listing!", new_lego_path, class: "btn btn-primary" %>
-    </div>
-  </div>
+  </div>-->
 
 
+
+<div class="container">
   <div class="my-legos row">
-    <h2 class="lego-heading3">My legos:</h2>
+    <h2 class="lego-heading3 pt-4 mb-0">My legos:</h2>
+    <div class="flex mb-4">
+      <div class="lego-heading4">
+        <%= link_to "Create a new listing!", new_lego_path, class: "btn btn-primary" %>
+      </div>
+    </div>
+
     <% current_user.legos.each do |lego| %>
       <div class="col-md-4">
         <div class="lego-card">
@@ -44,10 +45,17 @@
             </div>
           </div>
           <div class="lego-card-details">
-            <div> <% if lego.user.photo.attached? %> <%= cl_image_tag lego.user.photo.key, class:"avatar"%> <% end %> </div>
-            <div class="lego-card-price"> <i class="fa-solid fa-euro-sign"></i> <span><%= lego.price %></span></div>
+            <div>
+              <% if lego.user.photo.attached? %>
+                <%= cl_image_tag lego.user.photo.key, class: "avatar" %>
+              <% end %>
+            </div>
+            <div class="lego-card-price">
+              <i class="fa-solid fa-euro-sign"></i>
+              <span><%= lego.price %></span>
+            </div>
           </div>
-          <%= link_to '', lego_path(lego), class: 'card-link'  %>
+          <%= link_to "", lego_path(lego), class: "card-link" %>
         </div>
       </div>
     <% end %>
@@ -84,7 +92,7 @@
               <div class="booking-dates">
                 <p class="card-title" style="color: red;">From the <%= booking.start_date %></p>
                 <p class="card-title" style="color: red;">Until the <%= booking.end_date %></p>
-                <%= link_to '', lego_path(booking.lego.id), class: 'card-link' %>
+                <%= link_to "", lego_path(booking.lego.id), class: "card-link" %>
               </div>
             </div>
           </div>
