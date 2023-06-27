@@ -16,51 +16,49 @@
     <% end %>
   </div>
 
-<div class="row">
-  <div class="col">
-    <% if @query.present? %>
-      <% if @legos.present? %>
-        <p class="counter-text">You searched for <strong><%= @query %></strong>. We found <%= @legos.count %> Lego<%= 's' unless @legos.count == 1 %> on our website.</p>
+  <div class="row">
+    <div class="col">
+      <% if @query.present? %>
+        <% if @legos.present? %>
+          <p class="counter-text">You searched for <strong><%= @query %></strong>. We found <%= @legos.count %> Lego<%= 's' unless @legos.count == 1 %> on our website.</p>
+        <% else %>
+          <p class="counter-text">You searched for <strong><%= @query %></strong>. We found no Legos on our website.</p>
+        <% end %>
       <% else %>
-        <p class="counter-text">You searched for <strong><%= @query %></strong>. We found no Legos on our website.</p>
+        <p class="counter-text">We have <%= @legos.count %> Lego<%= 's' unless @legos.count == 1 %> on our website.</p>
       <% end %>
-    <% else %>
-      <p class="counter-text">We have <%= @legos.count %> Lego<%= 's' unless @legos.count == 1 %> on our website.</p>
-    <% end %>
+    </div>
   </div>
-</div>
 
   <div class="row">
     <% @legos.each do |lego| %>
       <div class="col-md-3">
-
         <div class="lego-card">
-            <% if lego.photo.attached? %> <%= cl_image_tag lego.photo.key, height: 300, crop: :fill, class:"w-100"%><% end %>
-              <div class="lego-card-content">
-                  <div class="lego-card-title">
-                      <div class="flex">
-                        <h4 class="card-title"><%= lego.title %></h4>
-                      </div>
-                  </div>
-                  <p class="card-location"><%= lego.location %></p>
-                  <div class="flex align-items-center">
-                    <p class="card-description"><%= lego.description.truncate(65) %></p>
-                  </div>
-              </div>
-            <div class="lego-card-footer justify-content-around">
-
-            <div class="lego-card-details">
-              <div> <% if lego.user.photo.attached? %> <%= cl_image_tag lego.user.photo.key, class:"avatar"%> <% end %> </div>
-              <div class="lego-card-price"> <i class="fa-solid fa-euro-sign"></i> <span><%= lego.price %></span></div>
+          <% if lego.photo.attached? %> <%= cl_image_tag lego.photo.key, height: 300, crop: :fill, class:"w-100"%><% end %>
+          <div class="lego-card-content">
+            <div class="lego-card-title">
+              <div class="flex">
+                <h4 class="card-title"><%= lego.title %></h4>
               </div>
             </div>
-           <%= link_to '', lego_path(lego), class: 'card-link'  %>
-
+            <p class="card-location"><%= lego.location %></p>
+            <div class="flex align-items-center">
+              <p class="card-description"><%= lego.description.truncate(65) %></p>
+            </div>
+          </div>
+          <div class="lego-card-footer justify-content-around">
+            <div class="lego-card-details">
+              <div> <% if lego.user.photo.attached? %> <%= cl_image_tag lego.user.photo.key, class:"avatar"%> <% end %> </div>
+              <div class="lego-card-price">  <span><%= lego.price %></span> <i class="fa-solid fa-euro-sign"></i></div>
+            </div>
+          </div>
+          <%= link_to '', lego_path(lego), class: 'card-link'  %>
         </div>
       </div>
     <% end %>
   </div>
 </div>
+
             <%# <%= link_to "Edit", edit_lego_path(lego), class: "ms-3 text-warning" %>
             <%# <%= link_to "Remove", lego_path(lego), %>
                 <%# data: { turbo_method: :delete, turbo_confirm: "Are you sure?" },
