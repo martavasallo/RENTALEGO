@@ -172,9 +172,9 @@ lego_twenty_six = Lego.new(title: "Architecture Great Wall of China", descriptio
 lego_twenty_six.photo.attach(io: file_twenty_six, filename: "lego.png", content_type: "image/png")
 lego_twenty_six.save
 
-lego_twenty_seven = Lego.new(title: "Technic Lamborghini Huracán Super Trofeo EVO", description: "Feel the power and speed of the Lamborghini Huracán Super Trofeo EVO with this amazing Technic set!", price: 299.99, location: "Buckingham Palace, Westminster, London SW1A 1AA, United Kingdom", user: user2)
-lego_twenty_seven.photo.attach(io: file_twenty_seven, filename: "lego.png", content_type: "image/png")
-lego_twenty_seven.save
+# lego_twenty_seven = Lego.new(title: "Technic Lamborghini Huracán Super Trofeo EVO", description: "Feel the power and speed of the Lamborghini Huracán Super Trofeo EVO with this amazing Technic set!", price: 299.99, location: "Buckingham Palace, Westminster, London SW1A 1AA, United Kingdom", user: user2)
+# lego_twenty_seven.photo.attach(io: file_twenty_seven, filename: "lego.png", content_type: "image/png")
+# lego_twenty_seven.save
 
 
 puts "Finished!"
