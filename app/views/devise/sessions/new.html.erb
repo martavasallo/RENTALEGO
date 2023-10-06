@@ -10,11 +10,13 @@
                           required: false,
                           autofocus: true,
                           input_html: { autocomplete: 'email', class: 'form-control', placeholder: 'Email' } %>
+                          <p class="fw-lighter fst-italic" style="color: gray; font-size: 12px">You can use: marta@gmail.com</p>
             </div>
             <div class="mb-3">
               <%= f.input :password,
                           required: false,
                           input_html: { autocomplete: 'current-password', class: 'form-control', placeholder: 'Password' } %>
+                          <p class="fw-lighter fst-italic" style="color: gray; font-size: 12px">You can use: secret</p>
             </div>
             <div class="mb-3 form-check">
               <%= f.input :remember_me, as: :boolean, label: 'Remember me', input_html: { class: 'form-check-input' } if devise_mapping.rememberable? %>
@@ -23,6 +25,10 @@
               <%= f.button :submit, 'Log in', class: 'btn btn-primary btn-block' %>
             </div>
           <% end %>
+
+          <br>
+          <%= render "devise/shared/links" %>
+
         </div>
       </div>
     </div>
